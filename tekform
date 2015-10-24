@@ -1,0 +1,4 @@
+latex formulur.tex
+dvips -Ppdf -t landscape formulur.dvi
+ps2pdf formulur.ps
+rm -f formulur.aux formulur.log formulur.dvi formulur.ps missfont.log

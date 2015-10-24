@@ -1,0 +1,794 @@
+\documentclass[12pt,a4paper,landscape]{article}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-text}
+\usepackage{array}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{pxfonts}
+\usepackage{enumitem}
+\usepackage{comment}
+
+
+% If you're reading this, be prepared for confusion.  Making this was
+% a learning experience for me, and it shows.  Much of the placement
+% was hacked in; if you make it better, let me know...
+
+\DeclareFixedFont{\sf}{T1}{phv}{b}{n}{0.11mm}
+
+\newcommand*\punktur{\pstextpath[l](0,0){%
+  \parametricplot*[plotstyle=curve,plotpoints=50]{0}{360}{t sin 45 div t  cos 45 div} }{\sf \textcolor{lightgray}{Benedikt Bjarni Bogason--}} }
+
+% All this page size stuff is a hack, but it seems to work
+% Turn off header and footer
+\pagestyle{empty}
+
+\setlength{\oddsidemargin}{0.05in}
+\setlength{\evensidemargin}{0.5in}
+\setlength{\textwidth}{10in}
+
+
+\setlength{\topmargin}{-0.65in}
+\setlength{\textheight}{7.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+
+
+
+ 
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\Large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+%\setlength{\parskip}{0pt plus 0.5ex}
+\setlength{\parskip}{0.5pt}
+
+% -----------------------------------------------------------------------
+%\makeatletter
+%  \AddToShipoutPicture{%
+%    \setlength{\@tempdimb}{.9\paperwidth}%
+%    \setlength{\@tempdimc}{.87\paperheight}%
+%    \setlength{\unitlength}{1pt}%
+%    \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
+%      \includegraphics[width=1.5cm]{fg.eps}
+%    }
+%}
+\makeatother
+\makeatletter
+  \AddToShipoutPicture{%
+    \setlength{\@tempdimb}{.95\paperwidth}%
+    \setlength{\@tempdimc}{.07\paperheight}%
+    \setlength{\unitlength}{1pt}%
+    \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
+\psset{linestyle=none}
+      \mbox{\rotatebox{90}{\scriptsize \copyright~Fjölbrautaskólinn í Garðabæ\,\punktur~~Gjört \the\year\,\punktur  }}
+    }
+}
+\makeatother
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+\begin{center}
+     \Large{\textbf{Formúlublað}} \\
+\end{center}
+
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\subsection{Vaxtareikningar}
+	\begin{multicols}{2}
+		\begin{align*}
+    			v   &= H  p  t    \\
+   			H_n &= H (1 \pm p)^n 
+		\end{align*}
+		\begin{align*}
+			H_n &= H \left( 1 + \frac{p}{m}\right)^{mn}	\\
+			H_n &= H e^{pn}
+		\end{align*}
+	\end{multicols}
+%
+\subsection{Rétthyrndur þríhyrningur} 
+\vspace{2mm}
+	\begin{multicols}{3}
+		\begin{align*}
+			\cos v &= \dfrac{\text{\scriptsize Aðl}}{\text{\scriptsize Lang}}
+		\end{align*}
+		\begin{align*}
+			\sin v &= \dfrac{\text{\scriptsize Mótl}}{\text{\scriptsize Lang}}
+		\end{align*}
+		\begin{align*}
+			\tan v &= \dfrac{\text{\scriptsize Mótl}}{\text{\scriptsize Aðl}}
+		\end{align*}
+	\end{multicols}
+%
+\subsection{Jafna beinnar línu}
+	\begin{multicols}{2}
+		\begin{align*}
+			y &= hx + k 
+		\end{align*}
+     		\begin{align*}
+			y - y_1 &= h(x - x_1)
+		\end{align*}
+	\end{multicols}
+%
+\subsection{Fjarlægðarformúla}
+	\begin{align*}
+		d &= \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+	\end{align*}
+% 
+\subsection{Hallatala línu}
+	\begin{align*} 
+		h = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} 
+	\end{align*}
+%
+\subsection{Miðpunktur striks}
+	\begin{align*} 
+		M   = \left( \dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2} \right)
+	\end{align*}
+%
+\subsection{Lausnaformúla}
+	\begin{align*} 
+		x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+	\end{align*}
+%
+\subsection{Samhverfuás}
+	\begin{align*} 
+		x = \dfrac{-b}{2a}
+	\end{align*}
+%
+\begin{comment}
+\subsection{Kósínusregla}
+    \[ c^2 = a^2 +b^2 -2ab\cos C \]
+\subsection{Sínusregla}
+\[ \dfrac{\sin A}{a} = \dfrac{\sin B}{b} = \dfrac{\sin C}{c}  \]
+\subsection{Flatarmálsregla}
+\[ F = \dfrac{a b \sin C}{2} \]
+\end{comment}
+%
+\subsection{Lograr}
+	\begin{multicols}{2}
+		\begin{align*}
+			\lg(A B) &= \lg A + \lg B
+		\end{align*}
+		\begin{align*}
+			\lg \left( \frac{A}{B} \right) &= \lg A - \lg B
+		\end{align*}
+	\end{multicols}
+	\begin{align*}
+		\lg A^y &= y\lg A
+	\end{align*}
+
+\subsection{Umraðanir og samantektir}
+	\begin{align*}
+		P(n,k) &= \frac{n!}{(n-k)!} \\
+		C(n,k) &= \dbinom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{(n-k)!k!}
+	\end{align*}
+%
+\subsection{Hornaföll}
+	\begin{align*}
+		\sin(u \pm v) &= \sin u \cdot \cos v \pm \cos u \cdot \sin v \\
+%		\sin(u \pm v) &= \sin u \cdot \cos v \pm \cos u \cdot \sin v \\
+%		\cos(u \pm v) &= \cos u \cdot \cos v \mp \sin u \cdot \sin v \\
+		\cos(u \pm v) &= \cos u \cdot \cos v \mp \sin u \cdot \sin v \\[0.5em]
+		\sin 2u &= 2\sin u \cdot \cos u \\
+		\cos 2u &= \cos^2 u - \sin^2 u \\[0.5em]
+		1 &= \cos^2 u + \sin^2 u \\
+		\tan u &= \frac{\sin u}{\cos u}
+	\end{align*}
+%
+\subsection{Vigrar}
+	\begin{align*}
+		\vec{u} \cdot \vec{v} &= |\vec{u}|\cdot |\vec{v}| \cdot \cos(\vec{u},\vec{v}) \\
+		|\vec{u} \times \vec{v}| &= |\vec{u}|\cdot |\vec{v}| \cdot \sin(\vec{u},\vec{v}) 
+	\end{align*}
+%
+\subsection{Afleiður}
+	\begin{align*}
+		f'(x) &= \lim_{h \to 0}\dfrac{f(x+h) - f(x)}{h} %\\[0.5em] 
+%		(f\cdot g)' 	&= f' \cdot g + f \cdot g'		\\[0.5em]
+%		\left(\dfrac{f}{g}\right)' &= \dfrac{f'\cdot g - f\cdot g'}{g^2} 
+	\end{align*}
+%
+%\subsection{Keðjuregla}
+%	\begin{align*}
+%		\big( f(g(x)) \big)' = f'(g(x)) \cdot g'(x)
+%	\end{align*}
+%
+\begin{comment}
+\subsection{Töluleg heildun}
+	\begin{align*}
+		T &= \frac{f(x_1) + f(x_2)}{2} \cdot h  \\[0.5em]
+		M &= f(m) \cdot h                   \\[0.5em]
+		S   &= \frac{T+2M}{3}
+	\end{align*}
+\end{comment} 
+%
+\subsection{Runur og raðir}
+%	\begin{multicols}{2}
+		\begin{align*}
+			a_n &= a_1 + (n-1) d             \\
+			a_n &= a_1 \cdot k^{n-1}              \\
+			s   &= \frac{a_1}{1-k} \\
+%		\end{align*}
+%		\begin{align*}
+			s_n &= \frac{n(a_1 + a_n)}{2}    \\
+			s_n &= \frac{a_1(k^n - 1)}{k-1}
+	\end{align*}
+%\end{multicols}
+%
+%\subsection{Hlutheildun}
+%	\begin{align*}
+%		\int f(x) g'(x)~dx = f(x)g(x) - \int f'(x)g(x)~dx
+%	\end{align*} 
+%
+%\begin{comment}
+\subsection{Töluleg heildun}
+	\begin{align*}
+		T &= \frac{f(x_1) + f(x_2)}{2} \cdot h  \\[0.5em]
+		M &= f(m) \cdot h                   \\[0.5em]
+		S   &= \frac{T+2M}{3}
+	\end{align*}
+
+
+\subsection{Rúmmál}
+	\begin{align*}
+		V_x     &= \pi \int_a^b \big( f(x) \big)^2\,dx                                          \\
+		V_x     &= \pi \int_a^b \bigg( \big(f(x) \big)^2 - \big(g(x) \big)^2 \bigg)\,dx         \\
+		V_{y=k} &= \pi \int_a^b \big( f(x) - k\big)^2\,dx                                       \\
+		V_y     &= 2\pi \int_a^b x\big|f(x)\big|\,dx                                            \\
+		V_y     &= 2\pi \int_a^b x\big|f(x) - g(x)\big|\,dx                                     \\
+		V_{x=k} &= 2\pi \int_a^b (x-k)\big|f(x) - g(x)\big|\,dx \qquad \text{ef $k \leq a < b$}
+	\end{align*}
+%\end{comment}
+%
+\subsection{Bogalengd}
+	\begin{align*}
+		s &= \int_a^b \sqrt{1 + (f'(x))^2}\,dx  
+	\end{align*}
+%
+\subsection{Yfirborðsflatarmál}
+	\begin{align*}
+		Y_x &= 2\pi\int_a^b \big| f(x) \big| \sqrt{1 + (f'(x))^2}\,dx                           \\
+		Y_y &= 2\pi\int_a^b \big| x \big| \sqrt{1 + (f'(x))^2}\,dx                           
+	\end{align*}
+%
+\subsection{Tvinntölur}
+	\begin{align*}
+		P(z) &= \left( z^2 - 2{\rm Re}(w)\cdot z + |w|^2 \right) \cdot Q(z) \\
+		e^{ix} &= \cos x + i \sin x 
+	\end{align*}
+%
+\subsection{Deildajöfnur}
+	\begin{align*}
+		y &= k_1 e^{\alpha_1 x} + k_2 e^{\alpha_2 x}    \\
+		y &= e^{px} (k_1 \cos(qx) + k_2 \sin(qx))    \\
+		y &= e^{\alpha x} (k_1x + k_2)    
+\end{align*}
+%
+
+
+%\rule{0.45\linewidth}{0.25pt}
+%\scriptsize
+%
+%Gjört 2007\\ 
+%Fjölbrautaskólinn í Garðabæ
+
+\end{multicols}
+\clearpage
+
+\begin{center}
+     \Large{\textbf{Formúlublað}} \\
+\end{center}
+
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+
+
+
+
+
+
+
+\subsection{Þríhyrningur}
+\begin{tabular}{ m{4cm}  m{2.4cm} }
+%\hline
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\pspolygon(-1.0000,-1.0000)(6.0000,-1.0000)(0.9373,6.2302)
+\uput{0.3000}[180.0000](-0.0313,2.6151){$a$}
+\uput{0.3000}[270.0000](2.5000,-1.0000){$b$}
+\uput{0.3000}[45.0000](3.4687,2.6151){$c$}
+\uput{0.3000}[200.0000](-1.0000,-1.0000){$C$}
+\uput{0.3000}[-20.0000](6.0000,-1.0000){$A$}
+\uput{0.3000}[90.0000](0.9373,6.2302){$B$}
+\uput{0.3000}[0.0000](0.9373,2.6151){$h$}
+\psline(0.9373,-0.4000)(1.5373,-0.4000)(1.5373,-1.0000)
+\psset{linewidth=1.0000pt}
+\psline[linestyle=dotted](0.9373,-1.0000)(0.9373,6.2302)
+\endpspicture
+% End of figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+\begin{minipage}[c]{3.4cm}
+$F = \dfrac{a b \sin C}{2}$\\[18pt]
+$c^2 = a^2 + b^2 - 2 a b \cos C$\\[18pt]
+$\dfrac{\sin A}{a} = \dfrac{\sin B}{b}  = \dfrac{\sin C}{c} $
+\end{minipage}
+\\
+%\hline
+\end{tabular}
+
+
+\subsection{Samsíðungur}
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\pspolygon(-2.0000,-1.0000)(4.5000,-1.0000)(6.7000,7.2104)(0.2000,7.2104)
+\uput{0.3000}[270.0000](1.2500,-1.0000){$g$}
+\uput{0.3000}[0.0000](0.2000,3.1052){$h$}
+\psline(0.2000,-0.4000)(0.8000,-0.4000)(0.8000,-1.0000)
+\psset{linewidth=1.0000pt}
+\psline[linestyle=dotted](0.2000,7.2104)(0.2000,-1.0000)
+\endpspicture
+% End of figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+$F = g  h$
+\\
+%\hline
+\end{tabular}
+
+
+
+\subsection{Trapisa}
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\psline(0.0000,-0.4000)(0.6000,-0.4000)(0.6000,-1.0000)
+\psline(-2.0000,-1.0000)(0.0000,-1.0000)
+\psline(-2.0000,-1.0000)(0.0000,7.0000)
+\uput{0.3000}[0.0000](0.0000,3.0000){$h$}
+\psline(0.0000,-1.0000)(5.0000,-1.0000)
+\uput{0.3000}[270.0000](2.5000,-1.0000){$b$}
+\psline(5.0000,7.0000)(0.0000,7.0000)
+\uput{0.3000}[90.0000](2.5000,7.0000){$a$}
+\psline(7.0000,-1.0000)(5.0000,7.0000)
+\psline(5.0000,-1.0000)(7.0000,-1.0000)
+\psset{linewidth=1.0000pt}
+\psline[linestyle=dotted](0.0000,-1.0000)(0.0000,7.0000)
+\endpspicture
+% End of figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+$F=\dfrac{(a+b) h}{2}$
+\\
+%\hline
+\end{tabular}
+
+
+
+\subsection{Hringur}
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pswedge[fillstyle=solid,linecolor=white,linewidth=0pt,fillcolor=black!10](2.25000,2.48000){2.300}{0.0000}{45.0000}
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\psdots[dotstyle=*, dotscale=1.0000](2.5000,3.0000)
+\pscircle(2.5000,3.0000){4.5000}
+\uput{0.3000}[270.0000](4.7500,3.0000){$r$}
+\uput{0.3000}[135.0000](2.5000,3.0000){$\textit{þ}$}
+\psarc(2.5000,3.0000){0.8500}{0.0000}{45.0000}
+\uput{1.2000}[20.0000](2.5000,3.0000){$v$}
+\uput{0.1000}[180.0000](6.3410,4.5910){$b$}
+\psset{linewidth=1.0000pt}
+\psline[linestyle=dotted](2.5000,3.0000)(7.0000,3.0000)
+\psline[linestyle=dotted](-0.6820,-0.1820)(5.6820,6.1820)
+\endpspicture
+% End of figure
+%\pswedge[fillstyle=vlines,linewidth=0pt,hatchcolor=black!10](-5.0000,5.0000){4.500}{0.0000}{45.0000}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+\begin{minipage}[c]{2.4cm}
+$U = 2 \pi r = \textit{þ} \pi$\\[18pt]
+$F = \pi r^2$\\[18pt]
+$b = \dfrac{v}{360^\circ} \cdot U$\\[18pt]
+$F_g = \dfrac{v}{360^\circ} \cdot F$
+\end{minipage}
+\\
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+
+
+
+
+\subsection{Kassi}
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\psline(-2.0000,4.5000)(4.0000,4.5000)
+\psline(4.0000,4.5000)(6.8284,7.3284)
+\psline(6.8284,7.3284)(0.8284,7.3284)
+\psline(0.8284,7.3284)(-2.0000,4.5000)
+\psline(-2.0000,-1.0000)(4.0000,-1.0000)
+\psline(4.0000,-1.0000)(6.8284,1.8284)
+\psline(6.8284,1.8284)(6.8284,7.3284)
+\psline[linestyle=dashed](6.8284,1.8284)(0.8284,1.8284)
+\psline[linestyle=dashed](0.8284,1.8284)(-2.0000,-1.0000)
+\psline[linestyle=dashed](0.8284,1.8284)(0.8284,7.3284)
+\psline(-2.0000,-1.0000)(-2.0000,4.5000)
+\psline(4.0000,-1.0000)(4.0000,4.5000)
+\uput{0.3000}[0.0000](6.8284,4.5784){$h$}
+\uput{0.3000}[270.0000](1.0000,-1.0000){$a$}
+\uput{0.6000}[0.0000](5.4142,0.4142){$b$}
+\psline(4.4243,-0.5757)(4.4243,0.0243)(4.0000,-0.4000)
+\psline(0.8284,2.4284)(1.4284,2.4284)(1.4284,1.8284)
+\endpspicture
+% End of figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+\begin{minipage}[c]{2.4cm}
+$R = a b h$%\\[18pt]
+%$Y = 2(ab + ah + bh)$
+\end{minipage}
+\\
+%\hline
+\end{tabular}
+
+
+
+
+\subsection{Sívalningur}
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\psdots[dotstyle=*, dotscale=1.0000](2.5000,0.0000)
+\uput{0.3000}[270.0000](4.7500,0.0000){$r$}
+\parametricplot{0.0000}{360.0000}{2.5000 4.5000 t cos mul -0.0000 t sin mul add add 6.0000 0.0000 t cos mul 1.5000 t sin mul add add }
+\parametricplot[linestyle=dashed]{0.0000}{180.0000}{2.5000 4.5000 t cos mul -0.0000 t sin mul add add 0.0000 0.0000 t cos mul 1.5000 t sin mul add add }
+\parametricplot{180.0000}{360.0000}{2.5000 4.5000 t cos mul -0.0000 t sin mul add add 0.0000 0.0000 t cos mul 1.5000 t sin mul add add }
+\psline(-2.0000,0.0000)(-2.0000,6.0000)
+\psline(7.0000,0.0000)(7.0000,6.0000)
+\uput{0.3000}[0.0000](7.0000,3.0000){$h$}
+\psset{linewidth=1.0000pt}
+\psline[linestyle=dotted](2.5000,0.0000)(7.0000,0.0000)
+\endpspicture
+% End of figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+\begin{minipage}[c]{2.4cm}
+$R = \pi r^2 h$ \\[18pt]
+$M = 2 \pi r h$\\[18pt]
+$Y = M + 2 \pi r^2$
+\end{minipage}
+\\
+%\hline
+\end{tabular}
+
+\begin{comment}
+\subsection{Strendingur}
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\pspolygon(-1.5000,5.3274)(0.6726,4.6548)(6.1726,4.6548)(6.8452,5.8274)(5.1726,7.0000)(-0.3274,7.0000)
+\psline(-1.5000,-1.1726)(0.6726,-1.8452)
+\psline(0.6726,-1.8452)(6.1726,-1.8452)
+\psline(6.1726,-1.8452)(6.8452,-0.6726)
+\psline[linestyle=dashed](6.8452,-0.6726)(5.1726,0.5000)
+\psline[linestyle=dashed](5.1726,0.5000)(-0.3274,0.5000)
+\psline[linestyle=dashed](-0.3274,0.5000)(-1.5000,-1.1726)
+\psline(-1.5000,-1.1726)(-1.5000,5.3274)
+\psline(0.6726,-1.8452)(0.6726,4.6548)
+\psline(6.1726,-1.8452)(6.1726,4.6548)
+\psline(6.8452,-0.6726)(6.8452,5.8274)
+\psline[linestyle=dashed](5.1726,0.5000)(5.1726,7.0000)
+\psline[linestyle=dashed](-0.3274,0.5000)(-0.3274,7.0000)
+\uput{0.0000}[0.0000](2.6726,-0.9226){$G$}
+\uput{0.3000}[0.0000](6.8452,2.5774){$h$}
+\endpspicture
+% End of figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+$R = Gh$
+\\
+%\hline
+\end{tabular}
+\end{comment}
+
+\subsection{Kúla}
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\psdots[dotstyle=*, dotscale=1.0000](3.0000,3.0000)
+\pscircle(3.0000,3.0000){4.5000}
+\uput{0.3000}[270.0000](5.2500,3.0000){$r$}
+\parametricplot[linestyle=dashed]{0.0000}{180.0000}{3.0000 4.5000 t cos mul -0.0000 t sin mul add add 3.0000 0.0000 t cos mul 1.5000 t sin mul add add }
+\parametricplot{180.0000}{360.0000}{3.0000 4.5000 t cos mul -0.0000 t sin mul add add 3.0000 0.0000 t cos mul 1.5000 t sin mul add add }
+\psset{linewidth=1.0000pt}
+\psline[linestyle=dotted](3.0000,3.0000)(7.5000,3.0000)
+\endpspicture
+% End of figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+\begin{minipage}[c]{2.4cm}
+$R=\dfrac{4\pi r^3}{3}$\\[18pt]
+$Y = 4 \pi r^2$
+\end{minipage}
+\\
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+
+
+
+
+
+\subsection{Pýramídi}
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\psline(-2.0000,-1.0000)(5.0000,-1.0000)
+\psline(5.0000,-1.0000)(7.8284,1.8284)
+\psline[linestyle=dashed](7.8284,1.8284)(0.8284,1.8284)
+\psline[linestyle=dashed](0.8284,1.8284)(-2.0000,-1.0000)
+\psline(-2.0000,-1.0000)(3.0000,7.5000)
+\psline(5.0000,-1.0000)(3.0000,7.5000)
+\psline(7.8284,1.8284)(3.0000,7.5000)
+\psline[linestyle=dashed](0.8284,1.8284)(3.0000,7.5000)
+\uput{0.3000}[180.0000](2.9571,3.9571){$h$}
+\uput{0.3000}[270.0000](1.5000,-1.0000){$a$}
+\uput{0.6000}[0.0000](6.4142,0.4142){$b$}
+\psdots[dotstyle=*, dotscale=1.0000](2.9142,0.4142)
+\psset{linewidth=1.0000pt}
+\psline[linestyle=dotted](3.0000,7.5000)(2.9142,0.4142)
+\endpspicture
+% End of figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+$R=\dfrac{a b h}{3}$
+\\
+%\hline
+\end{tabular}
+
+
+\subsection{Keila}
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generated by eukleides 1.0.3
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psset{unit=0.5000cm}
+\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
+\psdots[dotstyle=*, dotscale=1.0000](3.0000,0.0000)
+\psline(-2.0000,0.0000)(3.0000,7.5000)
+\psline(8.0000,0.0000)(3.0000,7.5000)
+\psline(3.0000,0.6000)(3.6000,0.6000)(3.6000,0.0000)
+\uput{0.3000}[270.0000](5.5000,0.0000){$r$}
+\uput{0.3000}[180.0000](3.0000,3.7500){$h$}
+\uput{0.3000}[0.0000](5.5000,3.7500){$s$}
+\parametricplot[linestyle=dashed]{22.9183}{157.0817}{3.0000 5.0000 t cos mul -0.0000 t sin mul add add 0.0000 0.0000 t cos mul 1.5000 t sin mul add add }
+\parametricplot{180.0000}{360.0000}{3.0000 5.0000 t cos mul -0.0000 t sin mul add add 0.0000 0.0000 t cos mul 1.5000 t sin mul add add }
+\psset{linewidth=1.0000pt}
+\psline[linestyle=dotted](3.0000,0.0000)(3.0000,7.5000)
+\psline[linestyle=dotted](3.0000,0.0000)(8.0000,0.0000)
+\endpspicture
+% End of figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&
+\begin{minipage}[c]{2.4cm}
+$R=\dfrac{\pi r^2 h}{3}$\\[18pt]
+$M = \pi r s$\\[18pt]
+$Y = M + \pi r^2$
+\end{minipage}
+\\
+%\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+%\newpage
+
+%\DeclareFixedFont{\SF}{T1}{phv}{b}{n}{1cm}
+%\newcommand*\textII{Benedikt Bjarni Bogason}
+
+%\begin{pspicture}(-6,-2)(4,2)
+%\psset{linestyle=none}
+%\pstextpath[l](0,0){%
+%  \parametricplot*[plotstyle=curve,plotpoints=50]{180}{540}{t sin 1 div t  cos 1 div} }{\textcolor{lightgray}{Benedikt Bjarni Bogason--}}
+%\end{pspicture}
+%\begin{pspicture*}(-2ex,-4ex)(0.3,4.5)
+%\pstextpath(0,-1ex){\pscharpath*[linestyle=none]{%
+%  \SF\shortstack{Þetta er magnað}}}{\sf \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII}
+%\end{pspicture*}
+%
+%
+%\pstextpath[l](0,0){%
+%  \parametricplot[plotstyle=curve,plotpoints=50]{0}{360}{t sin  div t  cos  div} }{ Benedikt Bjarni Bogason--}
+%\end{pspicture}
+\end{multicols}
+
+\clearpage
+
+\begin{center}
+     \Large{\textbf{Formúlublað}} \\
+\end{center}
+
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+
+
+\subsection{Deildunarreglur (Diffrun)}
+\begin{itemize}[label=]
+\item $\dfrac{d}{dx}~k = 0$ \quad ($k$ er fasti)
+\item $\dfrac{d}{dx}~k f(x)= k \left(\dfrac{d}{dx}~ f(x)\right)$ \quad ($k$ er fasti)
+\item $\dfrac{d}{dx}~(f(x) \pm g(x)) = f'(x) \pm g'(x)$
+\item $\dfrac{d}{dx}~x = 1$
+\item $\dfrac{d}{dx}~\sqrt{x} = \dfrac{1}{2\sqrt{x}}$
+\item $\dfrac{d}{dx}~x^n = nx^{n-1}$
+\item $\dfrac{d}{dx}~a^x = \ln a \cdot a^x$
+\item $\dfrac{d}{dx}~|x| = \dfrac{x}{|x|}$
+\item $\dfrac{d}{dx}~e^{ax} = ae^{ax}$
+\item $\dfrac{d}{dx}~\sin x = \cos x$
+\item $\dfrac{d}{dx}~\sin ax = a\cos ax$
+\item $\dfrac{d}{dx}~\cos x = -\sin x$
+\item $\dfrac{d}{dx}~\cos ax = -a\sin ax$
+\item $\dfrac{d}{dx}~\tan x = \dfrac{1}{\cos^2 x} = 1 + \tan^2 x$
+\item $\dfrac{d}{dx}~\tan ax = \dfrac{a}{\cos^2ax} = a(1 + \tan^2 ax)$
+\item $\dfrac{d}{dx}~\ln |x| = \dfrac{1}{x}$
+\item $\dfrac{d}{dx}~\ln |ax+b| = \dfrac{a}{ax+b}$
+\item $\dfrac{d}{dx}~\sin^{-1} x = \dfrac{1}{\sqrt{1-x^2}}$
+\item $\dfrac{d}{dx}~\cos^{-1} x = -\dfrac{1}{\sqrt{1-x^2}}$
+\item $\dfrac{d}{dx}~\tan^{-1} x = \dfrac{1}{1+x^2}$
+\end{itemize}
+
+%\vfill
+
+\subsection{Keðjuregla}
+	\vspace{-4mm}
+	\begin{align*}
+		\dfrac{d}{dx}~ f(g(x))  = f'(g(x)) \cdot g'(x)
+	\end{align*}
+
+
+\subsection{Samsett föll}
+	\begin{align*}
+		\dfrac{d}{dx}~\big( f(x) \cdot g(x) \big) &= f'(x) \cdot g(x) + f(x) \cdot g'(x) \\
+		\dfrac{d}{dx}~\left(\dfrac{f(x)}{g(x)}\right) &= \dfrac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2}
+	\end{align*}
+
+\subsection{Hlutheildun}
+	\begin{align*}
+		\int f(u) g'(u)~du = f(u)g(u) - \int f'(u)g(u)~du
+	\end{align*} 
+
+
+\subsection{Meðalgildi}
+	\vspace{-4mm}
+	\begin{align*}
+		m(f) = \dfrac{1}{b-a}\int_a^b f(u)~du
+	\end{align*} 
+
+
+
+\subsection{Heildunarreglur (Tegrun)}
+\begin{itemize}[label=]
+\item $\displaystyle\int du = u + C$
+\item $\displaystyle\int k~du = ku + C$ \quad ($k$ er fasti)
+\item $\displaystyle\int (du \pm dv) = \int du \pm \int dv$
+\item $\displaystyle\int u^n~du = \dfrac{u^{n+1}}{n+1} + C$ \quad ($n \neq -1$)
+\item $\displaystyle\int \dfrac{du}{u} = \ln\left|u\right| + C$
+\item $\displaystyle\int a^u~du = \dfrac{a^u}{\ln a} + C$ \quad $a>0$, $a\neq1$
+\item $\displaystyle\int e^u~du = e^u + C$
+\item $\displaystyle\int e^{bu}~du = \dfrac{e^{bu}}{b} + C$ \quad ($b \neq 0$)
+\item $\displaystyle\int \sin u~du = - \cos u + C$
+\item $\displaystyle\int \sin bu~du = - \dfrac{\cos bu}{b} + C$ \quad ($b \neq 0$)
+\item $\displaystyle\int \cos u~du = \sin u + C$
+\item $\displaystyle\int \cos bu~du = \dfrac{\sin bu}{b} + C$ \quad ($b \neq 0$)
+\item $\displaystyle\int \dfrac{1}{u+b}~du = \ln|u+b| + C$
+\item $\displaystyle\int \dfrac{1}{au+b}~du = \dfrac{1}{a}\ln|au+b| + C$
+\item $\displaystyle\int \dfrac{1}{\cos^2 u}~du = \tan u + C$
+\item $\displaystyle\int \dfrac{1}{\sin^2 u}~du = -\dfrac{1}{\tan u} + C$
+\item $\displaystyle\int \dfrac{\tan u}{\cos u}~du = \dfrac{1}{\cos u} + C$
+%\item $\displaystyle\int \csc u \cot u~du = - \csc u + C$
+\item $\displaystyle\int \tan u~du = - \ln\left|\cos u\right| + C$
+\item $\displaystyle\int \dfrac{1}{\tan u}~du = \ln\left|\sin u\right| + C$
+%\item $\displaystyle\int \dfrac{du}{\sqrt{a^2 - u^2}} = \sin^{-1}\left(\dfrac{u}{a}\right) + C$
+\item $\displaystyle\int \dfrac{du}{a^2 + u^2} = \dfrac{1}{a} \tan^{-1}\left(\dfrac{u}{a}\right) + C$
+%\item $\displaystyle\int \dfrac{du}{u\sqrt{u^2 - a^2}} = \dfrac{1}{a}\sec^{-1}\left|\dfrac{u}{a}\right| + C$
+\item $\displaystyle\int \dfrac{du}{a^2 - u^2} = \dfrac{1}{2a} \ln\left|\dfrac{u+a}{u-a}\right| + C$
+\end{itemize}
+\end{multicols}
+
+\end{document}
+
+
