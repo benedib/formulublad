@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper,landscape]{article}
 \usepackage[icelandic]{babel}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{multicol}
 \usepackage{calc}
 \usepackage{amsmath}
@@ -88,7 +89,7 @@
     \setlength{\unitlength}{1pt}%
     \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
 \psset{linestyle=none}
-      \mbox{\rotatebox{90}{\scriptsize \copyright~Fjölbrautaskólinn í Garðabæ\,\punktur~~Gjört \the\year\,\punktur  }}
+      \mbox{\rotatebox{90}{\scriptsize \copyright~FjÃ¶lbrautaskÃ³linn Ã­ GarÃ°abÃ¦\,\punktur~~GjÃ¶rt 2016\,\punktur  }}
     }
 }
 \makeatother
@@ -97,7 +98,7 @@
 
 \begin{document}
 \begin{center}
-     \Large{\textbf{Formúlublað}} \\
+     \Large{\textbf{FormÃºlublaÃ°}} \\
 \end{center}
 
 \raggedright
@@ -113,33 +114,34 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-\subsection{Vaxtareikningar}
-	\begin{multicols}{2}
-		\begin{align*}
-    			v   &= H  p  t    \\
-   			H_n &= H (1 \pm p)^n 
-		\end{align*}
-		\begin{align*}
-			H_n &= H \left( 1 + \frac{p}{m}\right)^{mn}	\\
-			H_n &= H e^{pn}
-		\end{align*}
-	\end{multicols}
+%\subsection{Vaxtareikningar}
+%	\begin{multicols}{2}
+%		\begin{align*}
+%    			v   &= H  p  t    \\
+%   			H_n &= H (1 \pm p)^n 
+%		\end{align*}
+%		\begin{align*}
+%			H_n &= H \left( 1 + \frac{p}{m}\right)^{mn}	\\
+%			H_n &= H e^{pn}
+%		\end{align*}
+%	\end{multicols}
 %
-\subsection{Rétthyrndur þríhyrningur} 
+\subsection{RÃ©tthyrndur Ã¾rÃ­hyrningur} 
 \vspace{2mm}
 	\begin{multicols}{3}
 		\begin{align*}
-			\cos v &= \dfrac{\text{\scriptsize Aðl}}{\text{\scriptsize Lang}}
+			\cos v &= \dfrac{\text{\scriptsize AÃ°l}}{\text{\scriptsize Lang}}
 		\end{align*}
 		\begin{align*}
-			\sin v &= \dfrac{\text{\scriptsize Mótl}}{\text{\scriptsize Lang}}
+			\sin v &= \dfrac{\text{\scriptsize MÃ³tl}}{\text{\scriptsize Lang}}
 		\end{align*}
 		\begin{align*}
-			\tan v &= \dfrac{\text{\scriptsize Mótl}}{\text{\scriptsize Aðl}}
+			\tan v &= \dfrac{\text{\scriptsize MÃ³tl}}{\text{\scriptsize AÃ°l}}
 		\end{align*}
 	\end{multicols}
+\vspace{2mm}
 %
-\subsection{Jafna beinnar línu}
+\subsection{Jafna beinnar lÃ­nu}
 	\begin{multicols}{2}
 		\begin{align*}
 			y &= hx + k 
@@ -149,37 +151,37 @@
 		\end{align*}
 	\end{multicols}
 %
-\subsection{Fjarlægðarformúla}
+\subsection{FjarlÃ¦gÃ°arformÃºla}
 	\begin{align*}
 		d &= \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 	\end{align*}
 % 
-\subsection{Hallatala línu}
+\subsection{Hallatala lÃ­nu}
 	\begin{align*} 
 		h = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} 
 	\end{align*}
 %
-\subsection{Miðpunktur striks}
+\subsection{MiÃ°punktur striks}
 	\begin{align*} 
 		M   = \left( \dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2} \right)
 	\end{align*}
 %
-\subsection{Lausnaformúla}
+\subsection{LausnaformÃºla}
 	\begin{align*} 
 		x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 	\end{align*}
 %
-\subsection{Samhverfuás}
+\subsection{SamhverfuÃ¡s}
 	\begin{align*} 
 		x = \dfrac{-b}{2a}
 	\end{align*}
 %
 \begin{comment}
-\subsection{Kósínusregla}
+\subsection{KÃ³sÃ­nusregla}
     \[ c^2 = a^2 +b^2 -2ab\cos C \]
-\subsection{Sínusregla}
+\subsection{SÃ­nusregla}
 \[ \dfrac{\sin A}{a} = \dfrac{\sin B}{b} = \dfrac{\sin C}{c}  \]
-\subsection{Flatarmálsregla}
+\subsection{FlatarmÃ¡lsregla}
 \[ F = \dfrac{a b \sin C}{2} \]
 \end{comment}
 %
@@ -195,18 +197,16 @@
 	\begin{align*}
 		\lg A^y &= y\lg A
 	\end{align*}
-
-\subsection{Umraðanir og samantektir}
+%
+\subsection{UmraÃ°anir og samantektir}
 	\begin{align*}
 		P(n,k) &= \frac{n!}{(n-k)!} \\
 		C(n,k) &= \dbinom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{(n-k)!k!}
 	\end{align*}
 %
-\subsection{Hornaföll}
+\subsection{HornafÃ¶ll}
 	\begin{align*}
 		\sin(u \pm v) &= \sin u \cdot \cos v \pm \cos u \cdot \sin v \\
-%		\sin(u \pm v) &= \sin u \cdot \cos v \pm \cos u \cdot \sin v \\
-%		\cos(u \pm v) &= \cos u \cdot \cos v \mp \sin u \cdot \sin v \\
 		\cos(u \pm v) &= \cos u \cdot \cos v \mp \sin u \cdot \sin v \\[0.5em]
 		\sin 2u &= 2\sin u \cdot \cos u \\
 		\cos 2u &= \cos^2 u - \sin^2 u \\[0.5em]
@@ -216,59 +216,48 @@
 %
 \subsection{Vigrar}
 	\begin{align*}
-		\vec{u} \cdot \vec{v} &= |\vec{u}|\cdot |\vec{v}| \cdot \cos(\vec{u},\vec{v}) \\
-		|\vec{u} \times \vec{v}| &= |\vec{u}|\cdot |\vec{v}| \cdot \sin(\vec{u},\vec{v}) 
+		\vec{u} \cdot \vec{v} &= |\vec{u}|\cdot |\vec{v}| \cdot \cos(\vec{u},\vec{v})
+%		|\vec{u} \times \vec{v}| &= |\vec{u}|\cdot |\vec{v}| \cdot \sin(\vec{u},\vec{v}) 
 	\end{align*}
 %
-\subsection{Afleiður}
+\subsection{AfleiÃ°ur}
 	\begin{align*}
-		f'(x) &= \lim_{h \to 0}\dfrac{f(x+h) - f(x)}{h} %\\[0.5em] 
-%		(f\cdot g)' 	&= f' \cdot g + f \cdot g'		\\[0.5em]
-%		\left(\dfrac{f}{g}\right)' &= \dfrac{f'\cdot g - f\cdot g'}{g^2} 
+		f'(x) &= \lim_{h \to 0}\dfrac{f(x+h) - f(x)}{h} = \lim_{x \to x_0}\dfrac{f(x) - f(x_0)}{x - x_0} \\[0.5em] 
+		(f\cdot g)' 	&= f' \cdot g + f \cdot g'		\\[0.5em]
+		\left(\dfrac{f}{g}\right)' &= \dfrac{f'\cdot g - f\cdot g'}{g^2} 
 	\end{align*}
 %
-%\subsection{Keðjuregla}
-%	\begin{align*}
-%		\big( f(g(x)) \big)' = f'(g(x)) \cdot g'(x)
-%	\end{align*}
+\subsection{KeÃ°juregla}
+	\begin{align*}
+		\big( f(g(x)) \big)' = f'(g(x)) \cdot g'(x)
+	\end{align*}
 %
-\begin{comment}
-\subsection{Töluleg heildun}
+\subsection{TÃ¶luleg heildun}
 	\begin{align*}
 		T &= \frac{f(x_1) + f(x_2)}{2} \cdot h  \\[0.5em]
 		M &= f(m) \cdot h                   \\[0.5em]
 		S   &= \frac{T+2M}{3}
-	\end{align*}
-\end{comment} 
+	\end{align*} 
 %
-\subsection{Runur og raðir}
-%	\begin{multicols}{2}
+\subsection{Runur og raÃ°ir}
+	\begin{multicols}{2}
 		\begin{align*}
 			a_n &= a_1 + (n-1) d             \\
 			a_n &= a_1 \cdot k^{n-1}              \\
 			s   &= \frac{a_1}{1-k} \\
-%		\end{align*}
-%		\begin{align*}
+		\end{align*}
+		\begin{align*}
 			s_n &= \frac{n(a_1 + a_n)}{2}    \\
 			s_n &= \frac{a_1(k^n - 1)}{k-1}
 	\end{align*}
-%\end{multicols}
+\end{multicols}
 %
-%\subsection{Hlutheildun}
-%	\begin{align*}
-%		\int f(x) g'(x)~dx = f(x)g(x) - \int f'(x)g(x)~dx
-%	\end{align*} 
-%
-%\begin{comment}
-\subsection{Töluleg heildun}
+\subsection{Hlutheildun}
 	\begin{align*}
-		T &= \frac{f(x_1) + f(x_2)}{2} \cdot h  \\[0.5em]
-		M &= f(m) \cdot h                   \\[0.5em]
-		S   &= \frac{T+2M}{3}
-	\end{align*}
-
-
-\subsection{Rúmmál}
+		\int f(x) g'(x)~dx = f(x)g(x) - \int f'(x)g(x)~dx
+	\end{align*} 
+%
+\subsection{RÃºmmÃ¡l}
 	\begin{align*}
 		V_x     &= \pi \int_a^b \big( f(x) \big)^2\,dx                                          \\
 		V_x     &= \pi \int_a^b \bigg( \big(f(x) \big)^2 - \big(g(x) \big)^2 \bigg)\,dx         \\
@@ -277,26 +266,25 @@
 		V_y     &= 2\pi \int_a^b x\big|f(x) - g(x)\big|\,dx                                     \\
 		V_{x=k} &= 2\pi \int_a^b (x-k)\big|f(x) - g(x)\big|\,dx \qquad \text{ef $k \leq a < b$}
 	\end{align*}
-%\end{comment}
 %
 \subsection{Bogalengd}
 	\begin{align*}
 		s &= \int_a^b \sqrt{1 + (f'(x))^2}\,dx  
 	\end{align*}
 %
-\subsection{Yfirborðsflatarmál}
+\subsection{YfirborÃ°sflatarmÃ¡l}
 	\begin{align*}
 		Y_x &= 2\pi\int_a^b \big| f(x) \big| \sqrt{1 + (f'(x))^2}\,dx                           \\
 		Y_y &= 2\pi\int_a^b \big| x \big| \sqrt{1 + (f'(x))^2}\,dx                           
 	\end{align*}
 %
-\subsection{Tvinntölur}
+\subsection{TvinntÃ¶lur}
 	\begin{align*}
 		P(z) &= \left( z^2 - 2{\rm Re}(w)\cdot z + |w|^2 \right) \cdot Q(z) \\
 		e^{ix} &= \cos x + i \sin x 
 	\end{align*}
 %
-\subsection{Deildajöfnur}
+\subsection{DeildajÃ¶fnur}
 	\begin{align*}
 		y &= k_1 e^{\alpha_1 x} + k_2 e^{\alpha_2 x}    \\
 		y &= e^{px} (k_1 \cos(qx) + k_2 \sin(qx))    \\
@@ -308,14 +296,14 @@
 %\rule{0.45\linewidth}{0.25pt}
 %\scriptsize
 %
-%Gjört 2007\\ 
-%Fjölbrautaskólinn í Garðabæ
+%GjÃ¶rt 2007\\ 
+%FjÃ¶lbrautaskÃ³linn Ã­ GarÃ°abÃ¦
 
 \end{multicols}
 \clearpage
 
 \begin{center}
-     \Large{\textbf{Formúlublað}} \\
+     \Large{\textbf{FormÃºlublaÃ°}} \\
 \end{center}
 
 \raggedright
@@ -338,7 +326,7 @@
 
 
 
-\subsection{Þríhyrningur}
+\subsection{ÃžrÃ­hyrningur}
 \begin{tabular}{ m{4cm}  m{2.4cm} }
 %\hline
 % Generated by eukleides 1.0.3
@@ -370,7 +358,7 @@ $\dfrac{\sin A}{a} = \dfrac{\sin B}{b}  = \dfrac{\sin C}{c} $
 \end{tabular}
 
 
-\subsection{Samsíðungur}
+\subsection{SamsÃ­Ã°ungur}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
 %\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -438,7 +426,7 @@ $F=\dfrac{(a+b) h}{2}$
 \psdots[dotstyle=*, dotscale=1.0000](2.5000,3.0000)
 \pscircle(2.5000,3.0000){4.5000}
 \uput{0.3000}[270.0000](4.7500,3.0000){$r$}
-\uput{0.3000}[135.0000](2.5000,3.0000){$\textit{þ}$}
+\uput{0.3000}[135.0000](2.5000,3.0000){$\textit{Ã¾}$}
 \psarc(2.5000,3.0000){0.8500}{0.0000}{45.0000}
 \uput{1.2000}[20.0000](2.5000,3.0000){$v$}
 \uput{0.1000}[180.0000](6.3410,4.5910){$b$}
@@ -451,7 +439,7 @@ $F=\dfrac{(a+b) h}{2}$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 &
 \begin{minipage}[c]{2.4cm}
-$U = 2 \pi r = \textit{þ} \pi$\\[18pt]
+$U = 2 \pi r = \textit{Ã¾} \pi$\\[18pt]
 $F = \pi r^2$\\[18pt]
 $b = \dfrac{v}{360^\circ} \cdot U$\\[18pt]
 $F_g = \dfrac{v}{360^\circ} \cdot F$
@@ -504,7 +492,7 @@ $R = a b h$%\\[18pt]
 
 
 
-\subsection{Sívalningur}
+\subsection{SÃ­valningur}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
 %\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -569,7 +557,7 @@ $R = Gh$
 \end{tabular}
 \end{comment}
 
-\subsection{Kúla}
+\subsection{KÃºla}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
 %\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -601,7 +589,7 @@ $Y = 4 \pi r^2$
 
 
 
-\subsection{Pýramídi}
+\subsection{PÃ½ramÃ­di}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
 %\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -678,7 +666,7 @@ $Y = M + \pi r^2$
 %\end{pspicture}
 %\begin{pspicture*}(-2ex,-4ex)(0.3,4.5)
 %\pstextpath(0,-1ex){\pscharpath*[linestyle=none]{%
-%  \SF\shortstack{Þetta er magnað}}}{\sf \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII}
+%  \SF\shortstack{Ãžetta er magnaÃ°}}}{\sf \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII}
 %\end{pspicture*}
 %
 %
@@ -690,7 +678,7 @@ $Y = M + \pi r^2$
 \clearpage
 
 \begin{center}
-     \Large{\textbf{Formúlublað}} \\
+     \Large{\textbf{FormÃºlublaÃ°}} \\
 \end{center}
 
 \raggedright
@@ -733,14 +721,14 @@ $Y = M + \pi r^2$
 
 %\vfill
 
-\subsection{Keðjuregla}
+\subsection{KeÃ°juregla}
 	\vspace{-4mm}
 	\begin{align*}
 		\dfrac{d}{dx}~ f(g(x))  = f'(g(x)) \cdot g'(x)
 	\end{align*}
 
 
-\subsection{Samsett föll}
+\subsection{Samsett fÃ¶ll}
 	\begin{align*}
 		\dfrac{d}{dx}~\big( f(x) \cdot g(x) \big) &= f'(x) \cdot g(x) + f(x) \cdot g'(x) \\
 		\dfrac{d}{dx}~\left(\dfrac{f(x)}{g(x)}\right) &= \dfrac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2}
@@ -749,14 +737,14 @@ $Y = M + \pi r^2$
 \subsection{Hlutheildun}
 	\begin{align*}
 		\int f(u) g'(u)~du = f(u)g(u) - \int f'(u)g(u)~du
-	\end{align*} 
+	\end{align*}
 
 
-\subsection{Meðalgildi}
+\subsection{MeÃ°algildi}
 	\vspace{-4mm}
 	\begin{align*}
 		m(f) = \dfrac{1}{b-a}\int_a^b f(u)~du
-	\end{align*} 
+	\end{align*}
 
 
 
