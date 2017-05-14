@@ -5,8 +5,9 @@
 \usepackage{multicol}
 \usepackage{calc}
 \usepackage{amsmath}
-\usepackage{tikz}
-\usetikzlibrary{decorations.text}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.text}
 \usepackage{array}
 \usepackage{eso-pic}
 \usepackage{graphicx}
@@ -335,7 +336,16 @@
 %\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,4);
+\coordinate (C) at (5,0);
+\coordinate (E) at (1,0);
+\draw[thick] (A) -- node[midway,left] {$a$} (B) -- node[midway,right,yshift=1mm] {$c$} (C) -- node[midway,below] {$b$} cycle;
+\draw[dotted] (B) -- node[midway,right] {$h$} (E);
+\draw (E) rectangle ++(0.3, 0.3);
+\draw (A) node[left] {$C$};
+\draw (B) node[above] {$B$};
+\draw (C) node[right] {$A$};
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
@@ -354,7 +364,17 @@ $F = \dfrac{a b \sin C}{2}$\\[18pt]
 %\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,4);
+\coordinate (C) at (5,4);
+\coordinate (D) at (4,0);
+\coordinate (E) at (1,0);
+\draw[thick] (A) -- (B) -- (C) -- (D) -- node[midway,below] {$g$} cycle;
+\draw[dotted] (B) -- node[midway,right] {$h$} (E);
+\draw (E) rectangle ++(0.3, 0.3);
+\draw (A) node[left, opacity=0] {$C$};
+\draw (B) node[above, opacity=0] {$B$};
+\draw (C) node[right, opacity=0] {$A$};
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
@@ -370,7 +390,17 @@ $F = g  h$
 %\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,4);
+\coordinate (C) at (4,4);
+\coordinate (D) at (5,0);
+\coordinate (E) at (1,0);
+\draw[thick] (A) -- (B) -- node[midway,above] {$a$} (C) -- (D) -- node[midway,below] {$b$} cycle;
+\draw[dotted] (B) -- node[midway,right] {$h$} (E);
+\draw (E) rectangle ++(0.3, 0.3);
+\draw (A) node[left, opacity=0] {$C$};
+\draw (B) node[above, opacity=0] {$B$};
+\draw (D) node[right, opacity=0] {$A$};
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
