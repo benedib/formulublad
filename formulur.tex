@@ -340,12 +340,12 @@
 \coordinate (B) at (1,4);
 \coordinate (C) at (5,0);
 \coordinate (E) at (1,0);
-\draw[thick] (A) -- node[midway,left] {$a$} (B) -- node[midway,right,yshift=1mm] {$c$} (C) -- node[midway,below] {$b$} cycle;
+\draw[thick] (A) -- node[midway,left] {$c$} (B) -- node[midway,right,yshift=1mm] {$a$} (C) -- node[midway,below] {$b$} cycle;
 \draw[dotted] (B) -- node[midway,right] {$h$} (E);
 \draw (E) rectangle ++(0.3, 0.3);
-\draw (A) node[left] {$C$};
+\draw (A) node[left] {$A$};
 \draw (B) node[above] {$B$};
-\draw (C) node[right] {$A$};
+\draw (C) node[right] {$C$};
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
@@ -476,7 +476,7 @@ $R = a b h$%\\[18pt]
 \begin{tabular}{ m{5cm}  m{2.4cm} }
 %\hline
 %%%%%%%%%%%%%%%%%%%
-\begin{tikzpicture}[scale=0.95]
+\begin{tikzpicture}[scale=0.9]
 \coordinate (M) at (2.5,0);
 \coordinate (Q) at (2.5,3.5);
 \draw[thick] [rotate around={0.:(Q)}] (Q) ellipse (2.6100766272276408cm and 0.75cm);
@@ -520,8 +520,15 @@ $R = Gh$
 \begin{tabular}{ m{5cm}  m{2.4cm} }
 %\hline
 %%%%%%%%%%%%%%%%%%%
-\begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
+\begin{tikzpicture}[scale=0.9]
+\coordinate (M) at (2.5,0);
+\draw[dashed] ((2.5,0) + (0:2.6100766272276408cm and 0.75cm) arc
+  (0:180:2.6100766272276408cm and 0.75cm);
+\draw[thick] ((2.5,0) + (180:2.6100766272276408cm and 0.75cm) arc
+  (180:360:2.6100766272276408cm and 0.75cm);
+\draw[dotted] (5.110076627227643,0.) -- node[midway,below] {$r$} (M);
+\draw[thick] (M) circle (2.6100766272276434cm);
+\fill (M) circle (1pt);
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
@@ -535,7 +542,7 @@ $Y = 4 \pi r^2$
 \end{tabular}
 
 
-
+\vfill
 
 
 \subsection{Pýramídi}
@@ -543,7 +550,22 @@ $Y = 4 \pi r^2$
 %\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
+\coordinate (T) at (2.5,4.25);
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (1,1);
+\coordinate (D) at (5,1);
+\coordinate (Q) at (2.5,0.5);
+\draw [dashed] (A)-- (C);
+\draw [dashed] (C)-- (D);
+\draw [dashed] (C)-- (T);
+\draw [thick] (A)-- (T);
+\draw [thick] (B)-- (T);
+\draw [thick] (T)-- (D);
+\draw [thick] (D) -- node[midway,right,yshift=-1mm] {$b$} (B);
+\draw [thick] (B) -- node[midway,below] {$a$} (A);
+\draw [dotted] (T) -- node[midway,right] {$h$} (Q);
+\fill (Q) circle (1pt);
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
@@ -552,13 +574,25 @@ $R=\dfrac{a b h}{3}$
 %\hline
 \end{tabular}
 
+\vfill
 
 \subsection{Keila}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
 %\hline
 %%%%%%%%%%%%%%%%%%%
-\begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
+\begin{tikzpicture}[scale=0.9]
+\coordinate (M) at (2.5,0);
+\coordinate (T) at (2.5,4.25);
+\draw[dashed] ((2.5,0) + (0:2.6100766272276408cm and 0.75cm) arc
+  (5:175:2.6100766272276408cm and 0.75cm);
+\draw[thick] ((2.5,0) + (180:2.6100766272276408cm and 0.75cm) arc
+  (180:360:2.6100766272276408cm and 0.75cm);
+\draw[thick] (-0.11007662722763722,0.) -- (T);
+\draw[thick] (T) -- node[midway,right,yshift=1mm] {$s$} (5.110076627227643,0.);
+\draw[dotted] (T) -- node[midway,right] {$h$} (M);
+\draw[dotted] (5.110076627227643,0.)-- node[midway,below] {$r$} (M);
+\fill (M) circle (1pt);
+\draw (M) rectangle ++(0.3, 0.3);
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
