@@ -23,7 +23,6 @@
 \DeclareFixedFont{\sf}{T1}{phv}{b}{n}{0.11mm}
 
 
-
 \newcommand*\punktur{%
 \makebox[\fontcharwd\font`.][c]{%
 \resizebox{\fontcharht\font`.}{!}{\begin{tikzpicture}[%
@@ -56,8 +55,6 @@
 
 
 
- 
-
 % Redefine section commands to use less space
 \makeatletter
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
@@ -73,10 +70,6 @@
                                 {1ex plus .2ex}%
                                 {\normalfont\small\bfseries}}
 \makeatother
-
-% Define BibTeX command
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 % Don't print section numbers
 \setcounter{secnumdepth}{0}
@@ -118,19 +111,7 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-%\subsection{Vaxtareikningar}
-%	\begin{multicols}{2}
-%		\begin{align*}
-%    			v   &= H  p  t    \\
-%   			H_n &= H (1 \pm p)^n 
-%		\end{align*}
-%		\begin{align*}
-%			H_n &= H \left( 1 + \frac{p}{m}\right)^{mn}	\\
-%			H_n &= H e^{pn}
-%		\end{align*}
-%	\end{multicols}
-%
-\subsection{Rétthyrndur þríhyrningur} 
+\subsection{Rétthyrndur þríhyrningur}
 \vspace{2mm}
 	\begin{multicols}{3}
 		\begin{align*}
@@ -241,7 +222,7 @@
 		T &= \frac{f(x_1) + f(x_2)}{2} \cdot h  \\[0.5em]
 		M &= f(m) \cdot h                   \\[0.5em]
 		S   &= \frac{T+2M}{3}
-	\end{align*} 
+	\end{align*}
 %
 \subsection{Runur og raðir}
 	\begin{multicols}{2}
@@ -286,7 +267,7 @@
 \subsection{Tvinntölur}
 	\begin{align*}
 		P(z) &= \left( z^2 - 2{\rm Re}(w)\cdot z + |w|^2 \right) \cdot Q(z) \\
-		e^{ix} &= \cos x + i \sin x 
+		e^{ix} &= \cos x + i \sin x
 	\end{align*}
 %
 \subsection{Deildajöfnur}
@@ -297,12 +278,6 @@
 \end{align*}
 %
 
-
-%\rule{0.45\linewidth}{0.25pt}
-%\scriptsize
-%
-%Gjört 2007\\ 
-%Fjölbrautaskólinn í Garðabæ
 
 \end{multicols}
 \clearpage
@@ -326,14 +301,8 @@
 
 
 
-\newcommand\bbbPic{2.5cm}
-
-
-
-
 \subsection{Þríhyrningur}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
 \coordinate (A) at (0,0);
@@ -355,13 +324,11 @@ $F = \dfrac{a b \sin C}{2}$\\[18pt]
 %$\dfrac{\sin A}{a} = \dfrac{\sin B}{b}  = \dfrac{\sin C}{c} $
 %\end{minipage}
 \\
-%\hline
 \end{tabular}
 
 
 \subsection{Samsíðungur}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
 \coordinate (A) at (0,0);
@@ -380,14 +347,12 @@ $F = \dfrac{a b \sin C}{2}$\\[18pt]
 &
 $F = g  h$
 \\
-%\hline
 \end{tabular}
 
 
 
 \subsection{Trapisa}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
 \coordinate (A) at (0,0);
@@ -406,14 +371,12 @@ $F = g  h$
 &
 $F=\dfrac{(a+b) h}{2}$
 \\
-%\hline
 \end{tabular}
 
 
 
 \subsection{Hringur}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}[scale=1.2]
 \draw [shift={(2.,2.)}] (0.:0.3) arc (0.:42.5:0.3) node[midway,right,yshift=0.5mm] {$v$};
@@ -432,8 +395,6 @@ $b = \dfrac{v}{360^\circ} \cdot U$\\[18pt]
 $F_g = \dfrac{v}{360^\circ} \cdot F$
 \end{minipage}
 \\
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tabular}
 
 
@@ -441,7 +402,6 @@ $F_g = \dfrac{v}{360^\circ} \cdot F$
 
 \subsection{Kassi}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
 \coordinate (A) at (0,0);
@@ -466,7 +426,6 @@ $R = a b h$%\\[18pt]
 %$Y = 2(ab + ah + bh)$
 \end{minipage}
 \\
-%\hline
 \end{tabular}
 
 
@@ -474,7 +433,6 @@ $R = a b h$%\\[18pt]
 
 \subsection{Sívalningur}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}[scale=0.9]
 \coordinate (M) at (2.5,0);
@@ -497,28 +455,11 @@ $M = 2 \pi r h$\\[18pt]
 $Y = M + 2 \pi r^2$
 \end{minipage}
 \\
-%\hline
 \end{tabular}
 
-\begin{comment}
-\subsection{Strendingur}
-\begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%
-\begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
-\end{tikzpicture}
-%%%%%%%%%%%%%%%%%%%
-&
-$R = Gh$
-\\
-%\hline
-\end{tabular}
-\end{comment}
 
 \subsection{Kúla}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}[scale=0.9]
 \coordinate (M) at (2.5,0);
@@ -537,8 +478,6 @@ $R=\dfrac{4\pi r^3}{3}$\\[18pt]
 $Y = 4 \pi r^2$
 \end{minipage}
 \\
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tabular}
 
 
@@ -547,7 +486,6 @@ $Y = 4 \pi r^2$
 
 \subsection{Pýramídi}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
 \coordinate (T) at (2.5,4.25);
@@ -571,14 +509,12 @@ $Y = 4 \pi r^2$
 &
 $R=\dfrac{a b h}{3}$
 \\
-%\hline
 \end{tabular}
 
 \vfill
 
 \subsection{Keila}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}[scale=0.9]
 \coordinate (M) at (2.5,0);
@@ -602,8 +538,6 @@ $M = \pi r s$\\[18pt]
 $Y = M + \pi r^2$
 \end{minipage}
 \\
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tabular}
 
 \end{multicols}
@@ -651,8 +585,6 @@ $Y = M + \pi r^2$
 \item $\dfrac{d}{dx}~\cos^{-1} x = -\dfrac{1}{\sqrt{1-x^2}}$
 \item $\dfrac{d}{dx}~\tan^{-1} x = \dfrac{1}{1+x^2}$
 \end{itemize}
-
-%\vfill
 
 \subsection{Keðjuregla}
 	\vspace{-4mm}
@@ -711,5 +643,3 @@ $Y = M + \pi r^2$
 \end{multicols}
 
 \end{document}
-
-
