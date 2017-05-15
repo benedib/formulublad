@@ -415,8 +415,13 @@ $F=\dfrac{(a+b) h}{2}$
 \begin{tabular}{ m{5cm}  m{2.4cm} }
 %\hline
 %%%%%%%%%%%%%%%%%%%
-\begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
+\begin{tikzpicture}[scale=1.2]
+\draw [shift={(2.,2.)}] (0.:0.6) arc (0.:42.5:0.6) node[midway,right] {$v$};
+\draw[thick] (2.,2.) circle (2.cm);
+\draw[dotted] (0.5564352570549509,0.615759835532145) -- node[midway,left,xshift=-0mm,yshift=1mm] {$\textit{þ}$} (3.464137615067828,3.362461391799229);
+\draw[dotted] (2.,2.) -- node[midway,below] {$r$} (4.,2.);
+\draw [shift={(2.,2.)}] (0.:2) arc (0.:42.5:2) node[midway,left] {$b$};
+\fill (2,2) circle (1pt);
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
@@ -439,7 +444,20 @@ $F_g = \dfrac{v}{360^\circ} \cdot F$
 %\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
+\coordinate (A) at (0,0);
+\coordinate (B) at (0,3);
+\coordinate (C) at (4,3);
+\coordinate (D) at (4,0);
+\coordinate (E) at (1,4);
+\coordinate (F) at (5,4);
+\coordinate (G) at (5,1);
+\coordinate (H) at (1,1);
+\draw[thick] (A) -- (B) -- (E) -- node[above,midway,opacity=0] {$filler$} (F) -- (G) node[midway,right] {$h$} -- node[midway,right,yshift=-1mm] {$b$} (D) -- node[midway,below] {$a$} cycle;
+\draw[thick] (B) -- (C);
+\draw[thick] (F) -- (C) -- (D);
+\draw[dashed] (A) -- (H) -- (E);
+\draw[dashed] (H) -- (G);
+\draw (H) rectangle ++(0.3, 0.3);
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
@@ -459,7 +477,17 @@ $R = a b h$%\\[18pt]
 %\hline
 %%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
-\fill (0.,0.) circle (\bbbPic);
+\coordinate (M) at (2.5,0);
+\coordinate (Q) at (2.5,3.5);
+\draw[thick] [rotate around={0.:(Q)}] (Q) ellipse (2.6100766272276408cm and 0.75cm);
+\draw[dashed] ((2.5,0) + (0:2.6100766272276408cm and 0.75cm) arc
+  (0:180:2.6100766272276408cm and 0.75cm);
+\draw[thick] ((2.5,0) + (180:2.6100766272276408cm and 0.75cm) arc
+  (180:360:2.6100766272276408cm and 0.75cm);
+\draw[thick] (-0.11007662722763767,3.5)-- (-0.11007662722763722,0.);
+\draw[thick] (5.110076627227643,3.5)-- (5.110076627227643,0.);
+\draw[dotted] (5.110076627227643,0.)-- node[midway,below] {$r$} (M);
+\fill (M) circle (1pt);
 \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%
 &
