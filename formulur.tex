@@ -111,20 +111,8 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-\subsection{Rétthyrndur þríhyrningur}
-\vspace{2mm}
-	\begin{multicols}{3}
-		\begin{align*}
-			\cos v &= \dfrac{\text{\scriptsize Aðl}}{\text{\scriptsize Lang}}
-		\end{align*}
-		\begin{align*}
-			\sin v &= \dfrac{\text{\scriptsize Mótl}}{\text{\scriptsize Lang}}
-		\end{align*}
-		\begin{align*}
-			\tan v &= \dfrac{\text{\scriptsize Mótl}}{\text{\scriptsize Aðl}}
-		\end{align*}
-	\end{multicols}
-\vspace{2mm}
+\subsection{Hallatala línu}
+$$h = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$
 %
 \subsection{Jafna beinnar línu}
 	\begin{multicols}{2}
@@ -137,63 +125,43 @@
 	\end{multicols}
 %
 \subsection{Fjarlægðarformúla}
-	\begin{align*}
-		d &= \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
-	\end{align*}
-% 
-\subsection{Hallatala línu}
-	\begin{align*} 
-		h = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} 
-	\end{align*}
+$$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
 %
 \subsection{Miðpunktur striks}
-	\begin{align*} 
-		M   = \left( \dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2} \right)
-	\end{align*}
+$$M   = \left( \dfrac{x_1 + x_2}{2},~\dfrac{y_1 + y_2}{2} \right)$$
 %
-\subsection{Lausnaformúla}
-	\begin{align*} 
-		x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-	\end{align*}
+\subsection{Lausnaformúla 2.~stigs jafna}
+$$x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 %
-\subsection{Samhverfuás}
-	\begin{align*} 
-		x = \dfrac{-b}{2a}
-	\end{align*}
+\subsection{Útgildispunktur}
+$$\textit{Ú} = \left(\dfrac{-b}{2a},~c - \dfrac{b^2}{4a} \right)$$
 %
-\subsection{Kósínusregla}
-	\begin{align*} 
-		c^2 = a^2 +b^2 -2ab\cos C
-	\end{align*}
-%
-\subsection{Sínusregla}
-	\begin{align*} 
-		\dfrac{\sin A}{a} = \dfrac{\sin B}{b} = \dfrac{\sin C}{c}
-	\end{align*}
-%
-\subsection{Flatarmálsregla}
-	\begin{align*} 
-		F = \dfrac{a b \sin C}{2}
-	\end{align*}
-%
-\subsection{Lograr}
-	\begin{multicols}{2}
+\subsection{Rétthyrndur þríhyrningur}
+\vspace{2mm}
+	\begin{multicols}{3}
 		\begin{align*}
-			\lg(A B) &= \lg A + \lg B
+			\cos v &= \dfrac{\text{\scriptsize Aðl}}{\text{\scriptsize Lang}}\\[0.5em]
+			\sec v &= \dfrac{\text{\scriptsize Lang}}{\text{\scriptsize Aðl}}
 		\end{align*}
 		\begin{align*}
-			\lg \left( \frac{A}{B} \right) &= \lg A - \lg B
+			\sin v &= \dfrac{\text{\scriptsize Mótl}}{\text{\scriptsize Lang}}\\[0.5em]
+			\csc v &= \dfrac{\text{\scriptsize Lang}}{\text{\scriptsize Mótl}}
+		\end{align*}
+		\begin{align*}
+			\tan v &= \dfrac{\text{\scriptsize Mótl}}{\text{\scriptsize Aðl}}\\[0.5em]
+			\cot v &= \dfrac{\text{\scriptsize Aðl}}{\text{\scriptsize Mótl}}
 		\end{align*}
 	\end{multicols}
-	\begin{align*}
-		\lg A^y &= y\lg A
-	\end{align*}
+\vspace{2mm}
 %
-%\subsection{Umraðanir og samantektir}
-%	\begin{align*}
-%		P(n,k) &= \frac{n!}{(n-k)!} \\
-%		C(n,k) &= \dbinom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{(n-k)!k!}
-%	\end{align*}
+\subsection{Flatarmálsregla}
+$$F = \dfrac{a b \sin C}{2}$$
+% 
+\subsection{Kósínusregla}
+$$c^2 = a^2 +b^2 -2ab\cos C$$
+%
+\subsection{Sínusregla}
+$$\dfrac{\sin A}{a} = \dfrac{\sin B}{b} = \dfrac{\sin C}{c}$$
 %
 \subsection{Hornaföll}
 	\begin{align*}
@@ -201,14 +169,35 @@
 		\cos(u \pm v) &= \cos u \cdot \cos v \mp \sin u \cdot \sin v \\[0.5em]
 		\sin 2u &= 2\sin u \cdot \cos u \\
 		\cos 2u &= \cos^2 u - \sin^2 u \\[0.5em]
+		\sin^2 u &= \dfrac{1 - \cos 2u}{2} \\
+		\cos^2 u &= \dfrac{1 + \cos 2u}{2} \\[0.5em]
 		1 &= \cos^2 u + \sin^2 u \\
 		\tan u &= \frac{\sin u}{\cos u}
 	\end{align*}
 %
+\subsection{Lograr}
+	\begin{multicols}{2}
+		\begin{align*}
+			\log(ab) &= \log a + \log b
+		\end{align*}
+		\begin{align*}
+			\log \left( \frac{a}{b} \right) &= \log a - \log b
+		\end{align*}
+	\end{multicols}
+	\begin{align*}
+		\log a^n &= n\log a
+	\end{align*}
+%
 \subsection{Vigrar}
 	\begin{align*}
-		\vec{u} \cdot \vec{v} &= |\vec{u}|\cdot |\vec{v}| \cdot \cos(\vec{u},\vec{v})
-%		|\vec{u} \times \vec{v}| &= |\vec{u}|\cdot |\vec{v}| \cdot \sin(\vec{u},\vec{v}) 
+		\vec{u} \cdot \vec{v} &= |\vec{u}|\cdot |\vec{v}| \cdot \cos \alpha\\
+		|\vec{u} \times \vec{v}| &= |\vec{u}|\cdot |\vec{v}| \cdot \sin \alpha 
+	\end{align*}
+%
+\subsection{Umraðanir og samantektir}
+	\begin{align*}
+		P(n,k) &= \frac{n!}{(n-k)!} \\
+		C(n,k) &= \dbinom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{k!(n-k)!}
 	\end{align*}
 %
 \subsection{Afleiður}
@@ -219,9 +208,7 @@
 	\end{align*}
 %
 \subsection{Keðjuregla}
-	\begin{align*}
-		\big( f(g(x)) \big)' = f'(g(x)) \cdot g'(x)
-	\end{align*}
+$$\big( f(g(x)) \big)' = f'(g(x)) \cdot g'(x)$$
 %
 %\subsection{Töluleg heildun}
 %	\begin{align*}
@@ -235,7 +222,7 @@
 		\begin{align*}
 			a_n &= a_1 + (n-1) d             \\
 			a_n &= a_1 \cdot k^{n-1}              \\
-			s   &= \frac{a_1}{1-k} \\
+			s   &= \frac{a_1}{1-k} 
 		\end{align*}
 		\begin{align*}
 			s_n &= \frac{n(a_1 + a_n)}{2}    \\
@@ -244,43 +231,40 @@
 \end{multicols}
 %
 \subsection{Hlutheildun}
-	\begin{align*}
-		%\int f(x) g'(x)~dx = f(x)g(x) - \int f'(x)g(x)~dx
-		\int f(x) g(x)~dx = f(x)G(x) - \int f'(x)G(x)~dx
-	\end{align*} 
+%$$\int f(x) g'(x)~dx = f(x)g(x) - \int f'(x)g(x)~dx$$
+$$\int f(x) g(x)~dx = f(x)G(x) - \int f'(x)G(x)~dx$$
 %
-\subsection{Rúmmál}
-	\begin{align*}
-		V_x     &= \pi \int_a^b \big( f(x) \big)^2\,dx                                          \\
-		V_x     &= \pi \int_a^b \bigg( \big(f(x) \big)^2 - \big(g(x) \big)^2 \bigg)\,dx         \\
-		V_{y=k} &= \pi \int_a^b \big( f(x) - k\big)^2\,dx                                       \\
-		V_y     &= 2\pi \int_a^b x\big|f(x)\big|\,dx                                            \\
-		V_y     &= 2\pi \int_a^b x\big|f(x) - g(x)\big|\,dx                                     \\
-		V_{x=k} &= 2\pi \int_a^b (x-k)\big|f(x) - g(x)\big|\,dx \qquad \text{ef $k \leq a < b$}
+\subsection{Rúmmál snúðs}
+	\begin{multicols}{2}
+		\begin{align*}
+			V_x     &= \pi \int_a^b \big( f(x) \big)^2\,dx                                          
+		\end{align*}
+%			V_x     &= \pi \int_a^b \bigg( \big(f(x) \big)^2 - \big(g(x) \big)^2 \bigg)\,dx         \\
+%			V_{y=k} &= \pi \int_a^b \big( f(x) - k\big)^2\,dx                                       \\
+		\begin{align*}
+			V_y     &= 2\pi \int_a^b x\big|f(x)\big|\,dx        %                                    \\
+%			V_y     &= 2\pi \int_a^b x\big|f(x) - g(x)\big|\,dx                                     \\
+%			V_{x=k} &= 2\pi \int_a^b (x-k)\big|f(x) - g(x)\big|\,dx \qquad \text{ef $k \leq a < b$}
 	\end{align*}
+\end{multicols}
 %
-\subsection{Bogalengd}
-	\begin{align*}
-		s &= \int_a^b \sqrt{1 + (f'(x))^2}\,dx  
-	\end{align*}
+\subsection{Lengd ferils}
+$$s = \int_a^b \sqrt{1 + (f'(x))^2}\,dx  $$
 %
-\subsection{Yfirborðsflatarmál}
+\subsection{Yfirborðsflatarmál snúðs}
 	\begin{align*}
 		Y_x &= 2\pi\int_a^b \big| f(x) \big| \sqrt{1 + (f'(x))^2}\,dx                           \\
 		Y_y &= 2\pi\int_a^b \big| x \big| \sqrt{1 + (f'(x))^2}\,dx                           
 	\end{align*}
 %
 \subsection{Tvinntölur}
-	\begin{align*}
-		P(z) &= \left( z^2 - 2{\rm Re}(w)\cdot z + |w|^2 \right) \cdot Q(z) \\
-		e^{ix} &= \cos x + i \sin x
-	\end{align*}
+$$e^{ix} = \cos x + i \sin x$$
 %
 \subsection{Deildajöfnur}
 	\begin{align*}
-		y &= k_1 e^{\alpha_1 x} + k_2 e^{\alpha_2 x}    \\
-		y &= e^{px} (k_1 \cos(qx) + k_2 \sin(qx))    \\
-		y &= e^{\alpha x} (k_1x + k_2)    
+		y &= C_1 e^{r_1 x} + C_2 e^{r_2 x}    \\
+		y &= e^{r x} (C_1x + C_2)    \\
+		y &= e^{\alpha x} (C_1 \cos \beta x + C_2 \sin\beta x)
 \end{align*}
 %
 
@@ -593,7 +577,6 @@ $Y = M + \pi r^2$
 \end{itemize}
 
 \subsection{Keðjuregla}
-	\vspace{-4mm}
 	\begin{align*}
 		\dfrac{d}{dx}~ f(g(x))  = f'(g(x)) \cdot g'(x)
 	\end{align*}
