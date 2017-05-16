@@ -5,9 +5,9 @@
 \usepackage{multicol}
 \usepackage{calc}
 \usepackage{amsmath}
-\usepackage{pstricks}
-\usepackage{pst-plot}
-\usepackage{pst-text}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.text}
 \usepackage{array}
 \usepackage{eso-pic}
 \usepackage{graphicx}
@@ -22,8 +22,22 @@
 
 \DeclareFixedFont{\sf}{T1}{phv}{b}{n}{0.11mm}
 
-\newcommand*\punktur{\pstextpath[l](0,0){%
-  \parametricplot*[plotstyle=curve,plotpoints=50]{0}{360}{t sin 45 div t  cos 45 div} }{\sf \textcolor{lightgray}{Benedikt Bjarni Bogason--}} }
+
+\newcommand*\punktur{%
+\makebox[\fontcharwd\font`.][c]{%
+\resizebox{\fontcharht\font`.}{!}{\begin{tikzpicture}[%
+                                             decoration={%
+                                               reverse path,%
+                                               text along path,%
+                                               text={|\sffamily\color{gray}\huge| Benedikt Bjarni Bogason --},%
+                                               }%
+                                           ]%
+                                           \draw [decorate] (0,0) circle (1.7);%
+                                           \fill[color=black] (0,0) circle (1.5);%
+                                           \end{tikzpicture}%
+                                    }%
+                                }%
+                    }%
 
 % All this page size stuff is a hack, but it seems to work
 % Turn off header and footer
@@ -41,8 +55,6 @@
 
 
 
- 
-
 % Redefine section commands to use less space
 \makeatletter
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
@@ -59,10 +71,6 @@
                                 {\normalfont\small\bfseries}}
 \makeatother
 
-% Define BibTeX command
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-
 % Don't print section numbers
 \setcounter{secnumdepth}{0}
 
@@ -72,24 +80,13 @@
 \setlength{\parskip}{0.5pt}
 
 % -----------------------------------------------------------------------
-%\makeatletter
-%  \AddToShipoutPicture{%
-%    \setlength{\@tempdimb}{.9\paperwidth}%
-%    \setlength{\@tempdimc}{.87\paperheight}%
-%    \setlength{\unitlength}{1pt}%
-%    \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
-%      \includegraphics[width=1.5cm]{fg.eps}
-%    }
-%}
-\makeatother
 \makeatletter
   \AddToShipoutPicture{%
     \setlength{\@tempdimb}{.95\paperwidth}%
     \setlength{\@tempdimc}{.07\paperheight}%
     \setlength{\unitlength}{1pt}%
     \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
-\psset{linestyle=none}
-      \mbox{\rotatebox{90}{\scriptsize \copyright~Fjölbrautaskólinn í Garðabæ\,\punktur~~Gjört 2017\,\punktur  }}
+      \mbox{\rotatebox{90}{\scriptsize \copyright~Fjölbrautaskólinn í Garðabæ\punktur~~Gjört 2017\!\punktur}}
     }
 }
 \makeatother
@@ -114,19 +111,7 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-%\subsection{Vaxtareikningar}
-%	\begin{multicols}{2}
-%		\begin{align*}
-%    			v   &= H  p  t    \\
-%   			H_n &= H (1 \pm p)^n 
-%		\end{align*}
-%		\begin{align*}
-%			H_n &= H \left( 1 + \frac{p}{m}\right)^{mn}	\\
-%			H_n &= H e^{pn}
-%		\end{align*}
-%	\end{multicols}
-%
-\subsection{Rétthyrndur þríhyrningur} 
+\subsection{Rétthyrndur þríhyrningur}
 \vspace{2mm}
 	\begin{multicols}{3}
 		\begin{align*}
@@ -176,14 +161,20 @@
 		x = \dfrac{-b}{2a}
 	\end{align*}
 %
-\begin{comment}
 \subsection{Kósínusregla}
-    \[ c^2 = a^2 +b^2 -2ab\cos C \]
+	\begin{align*} 
+		c^2 = a^2 +b^2 -2ab\cos C
+	\end{align*}
+%
 \subsection{Sínusregla}
-\[ \dfrac{\sin A}{a} = \dfrac{\sin B}{b} = \dfrac{\sin C}{c}  \]
+	\begin{align*} 
+		\dfrac{\sin A}{a} = \dfrac{\sin B}{b} = \dfrac{\sin C}{c}
+	\end{align*}
+%
 \subsection{Flatarmálsregla}
-\[ F = \dfrac{a b \sin C}{2} \]
-\end{comment}
+	\begin{align*} 
+		F = \dfrac{a b \sin C}{2}
+	\end{align*}
 %
 \subsection{Lograr}
 	\begin{multicols}{2}
@@ -198,11 +189,11 @@
 		\lg A^y &= y\lg A
 	\end{align*}
 %
-\subsection{Umraðanir og samantektir}
-	\begin{align*}
-		P(n,k) &= \frac{n!}{(n-k)!} \\
-		C(n,k) &= \dbinom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{(n-k)!k!}
-	\end{align*}
+%\subsection{Umraðanir og samantektir}
+%	\begin{align*}
+%		P(n,k) &= \frac{n!}{(n-k)!} \\
+%		C(n,k) &= \dbinom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{(n-k)!k!}
+%	\end{align*}
 %
 \subsection{Hornaföll}
 	\begin{align*}
@@ -232,12 +223,12 @@
 		\big( f(g(x)) \big)' = f'(g(x)) \cdot g'(x)
 	\end{align*}
 %
-\subsection{Töluleg heildun}
-	\begin{align*}
-		T &= \frac{f(x_1) + f(x_2)}{2} \cdot h  \\[0.5em]
-		M &= f(m) \cdot h                   \\[0.5em]
-		S   &= \frac{T+2M}{3}
-	\end{align*} 
+%\subsection{Töluleg heildun}
+%	\begin{align*}
+%		T &= \frac{f(x_1) + f(x_2)}{2} \cdot h  \\[0.5em]
+%		M &= f(m) \cdot h                   \\[0.5em]
+%		S   &= \frac{T+2M}{3}
+%	\end{align*}
 %
 \subsection{Runur og raðir}
 	\begin{multicols}{2}
@@ -282,7 +273,7 @@
 \subsection{Tvinntölur}
 	\begin{align*}
 		P(z) &= \left( z^2 - 2{\rm Re}(w)\cdot z + |w|^2 \right) \cdot Q(z) \\
-		e^{ix} &= \cos x + i \sin x 
+		e^{ix} &= \cos x + i \sin x
 	\end{align*}
 %
 \subsection{Deildajöfnur}
@@ -293,12 +284,6 @@
 \end{align*}
 %
 
-
-%\rule{0.45\linewidth}{0.25pt}
-%\scriptsize
-%
-%Gjört 2007\\ 
-%Fjölbrautaskólinn í Garðabæ
 
 \end{multicols}
 \clearpage
@@ -322,122 +307,92 @@
 
 
 
-
-
-
-
-
 \subsection{Þríhyrningur}
-\begin{tabular}{ m{4cm}  m{2.4cm} }
-%\hline
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\pspolygon(-1.0000,-1.0000)(6.0000,-1.0000)(0.9373,6.2302)
-\uput{0.3000}[180.0000](-0.0313,2.6151){$a$}
-\uput{0.3000}[270.0000](2.5000,-1.0000){$b$}
-\uput{0.3000}[45.0000](3.4687,2.6151){$c$}
-\uput{0.3000}[200.0000](-1.0000,-1.0000){$C$}
-\uput{0.3000}[-20.0000](6.0000,-1.0000){$A$}
-\uput{0.3000}[90.0000](0.9373,6.2302){$B$}
-\uput{0.3000}[0.0000](0.9373,2.6151){$h$}
-\psline(0.9373,-0.4000)(1.5373,-0.4000)(1.5373,-1.0000)
-\psset{linewidth=1.0000pt}
-\psline[linestyle=dotted](0.9373,-1.0000)(0.9373,6.2302)
-\endpspicture
-% End of figure
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabular}{ m{5cm}  m{2.4cm} }
+%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,4);
+\coordinate (C) at (5,0);
+\coordinate (E) at (1,0);
+\draw[thick] (A) -- node[midway,left] {$c$} (B) -- node[midway,right,yshift=1mm] {$a$} (C) -- node[midway,below] {$b$} cycle;
+\draw[dotted] (B) -- node[midway,right] {$h$} (E);
+\draw (E) rectangle ++(0.3, 0.3);
+\draw (A) node[left] {$A$};
+\draw (B) node[above] {$B$};
+\draw (C) node[right] {$C$};
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%
 &
-\begin{minipage}[c]{3.4cm}
-$F = \dfrac{a b \sin C}{2}$\\[18pt]
-$c^2 = a^2 + b^2 - 2 a b \cos C$\\[18pt]
-$\dfrac{\sin A}{a} = \dfrac{\sin B}{b}  = \dfrac{\sin C}{c} $
-\end{minipage}
+%\begin{minipage}[c]{2.4cm}
+$F = \dfrac{a b \sin C}{2}$
+%$c^2 = a^2 + b^2 - 2 a b \cos C$\\[18pt]
+%$\dfrac{\sin A}{a} = \dfrac{\sin B}{b}  = \dfrac{\sin C}{c}$
+%\end{minipage}
 \\
-%\hline
 \end{tabular}
 
 
 \subsection{Samsíðungur}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\pspolygon(-2.0000,-1.0000)(4.5000,-1.0000)(6.7000,7.2104)(0.2000,7.2104)
-\uput{0.3000}[270.0000](1.2500,-1.0000){$g$}
-\uput{0.3000}[0.0000](0.2000,3.1052){$h$}
-\psline(0.2000,-0.4000)(0.8000,-0.4000)(0.8000,-1.0000)
-\psset{linewidth=1.0000pt}
-\psline[linestyle=dotted](0.2000,7.2104)(0.2000,-1.0000)
-\endpspicture
-% End of figure
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,4);
+\coordinate (C) at (5,4);
+\coordinate (D) at (4,0);
+\coordinate (E) at (1,0);
+\draw[thick] (A) -- (B) -- (C) -- (D) -- node[midway,below] {$g$} cycle;
+\draw[dotted] (B) -- node[midway,right] {$h$} (E);
+\draw (E) rectangle ++(0.3, 0.3);
+\draw (A) node[left, opacity=0] {$C$};
+\draw (B) node[above, opacity=0] {$B$};
+\draw (C) node[right, opacity=0] {$A$};
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%
 &
 $F = g  h$
 \\
-%\hline
 \end{tabular}
 
 
 
 \subsection{Trapisa}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\psline(0.0000,-0.4000)(0.6000,-0.4000)(0.6000,-1.0000)
-\psline(-2.0000,-1.0000)(0.0000,-1.0000)
-\psline(-2.0000,-1.0000)(0.0000,7.0000)
-\uput{0.3000}[0.0000](0.0000,3.0000){$h$}
-\psline(0.0000,-1.0000)(5.0000,-1.0000)
-\uput{0.3000}[270.0000](2.5000,-1.0000){$b$}
-\psline(5.0000,7.0000)(0.0000,7.0000)
-\uput{0.3000}[90.0000](2.5000,7.0000){$a$}
-\psline(7.0000,-1.0000)(5.0000,7.0000)
-\psline(5.0000,-1.0000)(7.0000,-1.0000)
-\psset{linewidth=1.0000pt}
-\psline[linestyle=dotted](0.0000,-1.0000)(0.0000,7.0000)
-\endpspicture
-% End of figure
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,4);
+\coordinate (C) at (4,4);
+\coordinate (D) at (5,0);
+\coordinate (E) at (1,0);
+\draw[thick] (A) -- (B) -- node[midway,above] {$a$} (C) -- (D) -- node[midway,below] {$b$} cycle;
+\draw[dotted] (B) -- node[midway,right] {$h$} (E);
+\draw (E) rectangle ++(0.3, 0.3);
+\draw (A) node[left, opacity=0] {$C$};
+\draw (B) node[above, opacity=0] {$B$};
+\draw (D) node[right, opacity=0] {$A$};
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%
 &
 $F=\dfrac{(a+b) h}{2}$
 \\
-%\hline
 \end{tabular}
 
 
 
 \subsection{Hringur}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pswedge[fillstyle=solid,linecolor=white,linewidth=0pt,fillcolor=black!10](2.25000,2.48000){2.300}{0.0000}{45.0000}
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\psdots[dotstyle=*, dotscale=1.0000](2.5000,3.0000)
-\pscircle(2.5000,3.0000){4.5000}
-\uput{0.3000}[270.0000](4.7500,3.0000){$r$}
-\uput{0.3000}[135.0000](2.5000,3.0000){$\textit{þ}$}
-\psarc(2.5000,3.0000){0.8500}{0.0000}{45.0000}
-\uput{1.2000}[20.0000](2.5000,3.0000){$v$}
-\uput{0.1000}[180.0000](6.3410,4.5910){$b$}
-\psset{linewidth=1.0000pt}
-\psline[linestyle=dotted](2.5000,3.0000)(7.0000,3.0000)
-\psline[linestyle=dotted](-0.6820,-0.1820)(5.6820,6.1820)
-\endpspicture
-% End of figure
-%\pswedge[fillstyle=vlines,linewidth=0pt,hatchcolor=black!10](-5.0000,5.0000){4.500}{0.0000}{45.0000}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[scale=1.2]
+\draw [shift={(2.,2.)}] (0.:0.3) arc (0.:42.5:0.3) node[midway,right,yshift=0.5mm] {$v$};
+\draw[thick] (2.,2.) circle (2.cm);
+\draw[dotted] (0.5564352570549509,0.615759835532145) -- node[midway,left,xshift=-0mm,yshift=1mm] {$\textit{þ}$} (3.464137615067828,3.362461391799229);
+\draw[dotted] (2.,2.) -- node[midway,below] {$r$} (4.,2.);
+\draw [shift={(2.,2.)}] (0.:2) arc (0.:42.5:2) node[midway,left] {$b$};
+\fill (2,2) circle (1pt);
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%
 &
 \begin{minipage}[c]{2.4cm}
 $U = 2 \pi r = \textit{þ} \pi$\\[18pt]
@@ -446,8 +401,6 @@ $b = \dfrac{v}{360^\circ} \cdot U$\\[18pt]
 $F_g = \dfrac{v}{360^\circ} \cdot F$
 \end{minipage}
 \\
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tabular}
 
 
@@ -455,39 +408,30 @@ $F_g = \dfrac{v}{360^\circ} \cdot F$
 
 \subsection{Kassi}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\psline(-2.0000,4.5000)(4.0000,4.5000)
-\psline(4.0000,4.5000)(6.8284,7.3284)
-\psline(6.8284,7.3284)(0.8284,7.3284)
-\psline(0.8284,7.3284)(-2.0000,4.5000)
-\psline(-2.0000,-1.0000)(4.0000,-1.0000)
-\psline(4.0000,-1.0000)(6.8284,1.8284)
-\psline(6.8284,1.8284)(6.8284,7.3284)
-\psline[linestyle=dashed](6.8284,1.8284)(0.8284,1.8284)
-\psline[linestyle=dashed](0.8284,1.8284)(-2.0000,-1.0000)
-\psline[linestyle=dashed](0.8284,1.8284)(0.8284,7.3284)
-\psline(-2.0000,-1.0000)(-2.0000,4.5000)
-\psline(4.0000,-1.0000)(4.0000,4.5000)
-\uput{0.3000}[0.0000](6.8284,4.5784){$h$}
-\uput{0.3000}[270.0000](1.0000,-1.0000){$a$}
-\uput{0.6000}[0.0000](5.4142,0.4142){$b$}
-\psline(4.4243,-0.5757)(4.4243,0.0243)(4.0000,-0.4000)
-\psline(0.8284,2.4284)(1.4284,2.4284)(1.4284,1.8284)
-\endpspicture
-% End of figure
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}
+\coordinate (A) at (0,0);
+\coordinate (B) at (0,3);
+\coordinate (C) at (4,3);
+\coordinate (D) at (4,0);
+\coordinate (E) at (1,4);
+\coordinate (F) at (5,4);
+\coordinate (G) at (5,1);
+\coordinate (H) at (1,1);
+\draw[thick] (A) -- (B) -- (E) -- node[above,midway,opacity=0] {$filler$} (F) -- (G) node[midway,right] {$h$} -- node[midway,right,yshift=-1mm] {$b$} (D) -- node[midway,below] {$a$} cycle;
+\draw[thick] (B) -- (C);
+\draw[thick] (F) -- (C) -- (D);
+\draw[dashed] (A) -- (H) -- (E);
+\draw[dashed] (H) -- (G);
+\draw (H) rectangle ++(0.3, 0.3);
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%
 &
 \begin{minipage}[c]{2.4cm}
 $R = a b h$%\\[18pt]
 %$Y = 2(ab + ah + bh)$
 \end{minipage}
 \\
-%\hline
 \end{tabular}
 
 
@@ -495,25 +439,21 @@ $R = a b h$%\\[18pt]
 
 \subsection{Sívalningur}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\psdots[dotstyle=*, dotscale=1.0000](2.5000,0.0000)
-\uput{0.3000}[270.0000](4.7500,0.0000){$r$}
-\parametricplot{0.0000}{360.0000}{2.5000 4.5000 t cos mul -0.0000 t sin mul add add 6.0000 0.0000 t cos mul 1.5000 t sin mul add add }
-\parametricplot[linestyle=dashed]{0.0000}{180.0000}{2.5000 4.5000 t cos mul -0.0000 t sin mul add add 0.0000 0.0000 t cos mul 1.5000 t sin mul add add }
-\parametricplot{180.0000}{360.0000}{2.5000 4.5000 t cos mul -0.0000 t sin mul add add 0.0000 0.0000 t cos mul 1.5000 t sin mul add add }
-\psline(-2.0000,0.0000)(-2.0000,6.0000)
-\psline(7.0000,0.0000)(7.0000,6.0000)
-\uput{0.3000}[0.0000](7.0000,3.0000){$h$}
-\psset{linewidth=1.0000pt}
-\psline[linestyle=dotted](2.5000,0.0000)(7.0000,0.0000)
-\endpspicture
-% End of figure
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[scale=0.9]
+\coordinate (M) at (2.5,0);
+\coordinate (Q) at (2.5,3.5);
+\draw[thick] [rotate around={0.:(Q)}] (Q) ellipse (2.6100766272276408cm and 0.75cm);
+\draw[dashed] ((2.5,0) + (0:2.6100766272276408cm and 0.75cm) arc
+  (0:180:2.6100766272276408cm and 0.75cm);
+\draw[thick] ((2.5,0) + (180:2.6100766272276408cm and 0.75cm) arc
+  (180:360:2.6100766272276408cm and 0.75cm);
+\draw[thick] (-0.11007662722763767,3.5)-- (-0.11007662722763722,0.);
+\draw[thick] (5.110076627227643,3.5)-- node[midway,right] {$h$} (5.110076627227643,0.);
+\draw[dotted] (5.110076627227643,0.)-- node[midway,below] {$r$} (M);
+\fill (M) circle (1pt);
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%
 &
 \begin{minipage}[c]{2.4cm}
 $R = \pi r^2 h$ \\[18pt]
@@ -521,130 +461,82 @@ $M = 2 \pi r h$\\[18pt]
 $Y = M + 2 \pi r^2$
 \end{minipage}
 \\
-%\hline
 \end{tabular}
 
-\begin{comment}
-\subsection{Strendingur}
-\begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\pspolygon(-1.5000,5.3274)(0.6726,4.6548)(6.1726,4.6548)(6.8452,5.8274)(5.1726,7.0000)(-0.3274,7.0000)
-\psline(-1.5000,-1.1726)(0.6726,-1.8452)
-\psline(0.6726,-1.8452)(6.1726,-1.8452)
-\psline(6.1726,-1.8452)(6.8452,-0.6726)
-\psline[linestyle=dashed](6.8452,-0.6726)(5.1726,0.5000)
-\psline[linestyle=dashed](5.1726,0.5000)(-0.3274,0.5000)
-\psline[linestyle=dashed](-0.3274,0.5000)(-1.5000,-1.1726)
-\psline(-1.5000,-1.1726)(-1.5000,5.3274)
-\psline(0.6726,-1.8452)(0.6726,4.6548)
-\psline(6.1726,-1.8452)(6.1726,4.6548)
-\psline(6.8452,-0.6726)(6.8452,5.8274)
-\psline[linestyle=dashed](5.1726,0.5000)(5.1726,7.0000)
-\psline[linestyle=dashed](-0.3274,0.5000)(-0.3274,7.0000)
-\uput{0.0000}[0.0000](2.6726,-0.9226){$G$}
-\uput{0.3000}[0.0000](6.8452,2.5774){$h$}
-\endpspicture
-% End of figure
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-&
-$R = Gh$
-\\
-%\hline
-\end{tabular}
-\end{comment}
 
 \subsection{Kúla}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\psdots[dotstyle=*, dotscale=1.0000](3.0000,3.0000)
-\pscircle(3.0000,3.0000){4.5000}
-\uput{0.3000}[270.0000](5.2500,3.0000){$r$}
-\parametricplot[linestyle=dashed]{0.0000}{180.0000}{3.0000 4.5000 t cos mul -0.0000 t sin mul add add 3.0000 0.0000 t cos mul 1.5000 t sin mul add add }
-\parametricplot{180.0000}{360.0000}{3.0000 4.5000 t cos mul -0.0000 t sin mul add add 3.0000 0.0000 t cos mul 1.5000 t sin mul add add }
-\psset{linewidth=1.0000pt}
-\psline[linestyle=dotted](3.0000,3.0000)(7.5000,3.0000)
-\endpspicture
-% End of figure
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[scale=0.9]
+\coordinate (M) at (2.5,0);
+\draw[dashed] ((2.5,0) + (0:2.6100766272276408cm and 0.75cm) arc
+  (0:180:2.6100766272276408cm and 0.75cm);
+\draw[thick] ((2.5,0) + (180:2.6100766272276408cm and 0.75cm) arc
+  (180:360:2.6100766272276408cm and 0.75cm);
+\draw[dotted] (5.110076627227643,0.) -- node[midway,below] {$r$} (M);
+\draw[thick] (M) circle (2.6100766272276434cm);
+\fill (M) circle (1pt);
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%
 &
 \begin{minipage}[c]{2.4cm}
 $R=\dfrac{4\pi r^3}{3}$\\[18pt]
 $Y = 4 \pi r^2$
 \end{minipage}
 \\
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tabular}
 
 
-
+\vfill
 
 
 \subsection{Pýramídi}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\psline(-2.0000,-1.0000)(5.0000,-1.0000)
-\psline(5.0000,-1.0000)(7.8284,1.8284)
-\psline[linestyle=dashed](7.8284,1.8284)(0.8284,1.8284)
-\psline[linestyle=dashed](0.8284,1.8284)(-2.0000,-1.0000)
-\psline(-2.0000,-1.0000)(3.0000,7.5000)
-\psline(5.0000,-1.0000)(3.0000,7.5000)
-\psline(7.8284,1.8284)(3.0000,7.5000)
-\psline[linestyle=dashed](0.8284,1.8284)(3.0000,7.5000)
-\uput{0.3000}[180.0000](2.9571,3.9571){$h$}
-\uput{0.3000}[270.0000](1.5000,-1.0000){$a$}
-\uput{0.6000}[0.0000](6.4142,0.4142){$b$}
-\psdots[dotstyle=*, dotscale=1.0000](2.9142,0.4142)
-\psset{linewidth=1.0000pt}
-\psline[linestyle=dotted](3.0000,7.5000)(2.9142,0.4142)
-\endpspicture
-% End of figure
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}
+\coordinate (T) at (2.5,4.25);
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (1,1);
+\coordinate (D) at (5,1);
+\coordinate (Q) at (2.5,0.5);
+\draw [dashed] (A)-- (C);
+\draw [dashed] (C)-- (D);
+\draw [dashed] (C)-- (T);
+\draw [thick] (A)-- (T);
+\draw [thick] (B)-- (T);
+\draw [thick] (T)-- (D);
+\draw [thick] (D) -- node[midway,right,yshift=-1mm] {$b$} (B);
+\draw [thick] (B) -- node[midway,below] {$a$} (A);
+\draw [dotted] (T) -- node[midway,right] {$h$} (Q);
+\fill (Q) circle (1pt);
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%
 &
 $R=\dfrac{a b h}{3}$
 \\
-%\hline
 \end{tabular}
 
+\vfill
 
 \subsection{Keila}
 \begin{tabular}{ m{5cm}  m{2.4cm} }
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Generated by eukleides 1.0.3
-\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
-\psset{unit=0.5000cm}
-\pspicture*(-2.1000,-2.0000)(8.0000,8.0000)
-\psdots[dotstyle=*, dotscale=1.0000](3.0000,0.0000)
-\psline(-2.0000,0.0000)(3.0000,7.5000)
-\psline(8.0000,0.0000)(3.0000,7.5000)
-\psline(3.0000,0.6000)(3.6000,0.6000)(3.6000,0.0000)
-\uput{0.3000}[270.0000](5.5000,0.0000){$r$}
-\uput{0.3000}[180.0000](3.0000,3.7500){$h$}
-\uput{0.3000}[0.0000](5.5000,3.7500){$s$}
-\parametricplot[linestyle=dashed]{22.9183}{157.0817}{3.0000 5.0000 t cos mul -0.0000 t sin mul add add 0.0000 0.0000 t cos mul 1.5000 t sin mul add add }
-\parametricplot{180.0000}{360.0000}{3.0000 5.0000 t cos mul -0.0000 t sin mul add add 0.0000 0.0000 t cos mul 1.5000 t sin mul add add }
-\psset{linewidth=1.0000pt}
-\psline[linestyle=dotted](3.0000,0.0000)(3.0000,7.5000)
-\psline[linestyle=dotted](3.0000,0.0000)(8.0000,0.0000)
-\endpspicture
-% End of figure
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[scale=0.9]
+\coordinate (M) at (2.5,0);
+\coordinate (T) at (2.5,4.25);
+\draw[dashed] ((2.5,0) + (0:2.6100766272276408cm and 0.75cm) arc
+  (5:175:2.6100766272276408cm and 0.75cm);
+\draw[thick] ((2.5,0) + (180:2.6100766272276408cm and 0.75cm) arc
+  (180:360:2.6100766272276408cm and 0.75cm);
+\draw[thick] (-0.11007662722763722,0.) -- (T);
+\draw[thick] (T) -- node[midway,right,yshift=1mm] {$s$} (5.110076627227643,0.);
+\draw[dotted] (T) -- node[midway,right] {$h$} (M);
+\draw[dotted] (5.110076627227643,0.)-- node[midway,below] {$r$} (M);
+\fill (M) circle (1pt);
+\draw (M) rectangle ++(0.3, 0.3);
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%
 &
 \begin{minipage}[c]{2.4cm}
 $R=\dfrac{\pi r^2 h}{3}$\\[18pt]
@@ -652,28 +544,8 @@ $M = \pi r s$\\[18pt]
 $Y = M + \pi r^2$
 \end{minipage}
 \\
-%\hline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tabular}
-%\newpage
 
-%\DeclareFixedFont{\SF}{T1}{phv}{b}{n}{1cm}
-%\newcommand*\textII{Benedikt Bjarni Bogason}
-
-%\begin{pspicture}(-6,-2)(4,2)
-%\psset{linestyle=none}
-%\pstextpath[l](0,0){%
-%  \parametricplot*[plotstyle=curve,plotpoints=50]{180}{540}{t sin 1 div t  cos 1 div} }{\textcolor{lightgray}{Benedikt Bjarni Bogason--}}
-%\end{pspicture}
-%\begin{pspicture*}(-2ex,-4ex)(0.3,4.5)
-%\pstextpath(0,-1ex){\pscharpath*[linestyle=none]{%
-%  \SF\shortstack{Þetta er magnað}}}{\sf \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII \textII}
-%\end{pspicture*}
-%
-%
-%\pstextpath[l](0,0){%
-%  \parametricplot[plotstyle=curve,plotpoints=50]{0}{360}{t sin  div t  cos  div} }{ Benedikt Bjarni Bogason--}
-%\end{pspicture}
 \end{multicols}
 
 \clearpage
@@ -719,8 +591,6 @@ $Y = M + \pi r^2$
 \item $\dfrac{d}{dx}~\cos^{-1} x = -\dfrac{1}{\sqrt{1-x^2}}$
 \item $\dfrac{d}{dx}~\tan^{-1} x = \dfrac{1}{1+x^2}$
 \end{itemize}
-
-%\vfill
 
 \subsection{Keðjuregla}
 	\vspace{-4mm}
@@ -779,5 +649,3 @@ $Y = M + \pi r^2$
 \end{multicols}
 
 \end{document}
-
-

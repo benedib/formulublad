@@ -1,7 +1,5 @@
 This is the source code for Formúlublað Fjölbrautaskólans í Garðabæ, compiled by the mathematics department. Work started in 2007, and we have been slowly adding, removing and improving it ever since.
 
-The formulur.etex should be regarded as the real true source of this project, that file is then transformed to formulur.tex which in turn is transformed to formulur.pdf - the finished product.
-
-Use eukleides (http://www.eukleides.org) to transform formulur.etex to formulur.tex (hint: use the texforme shell script) - or if you do not have eukleides installed on your computer you can cheat, and just run the tekform shell script).
+run pdflatex formulur.tex to create the pdf file.
 
 Enjoy!
